@@ -19,12 +19,12 @@
             --card-bg: rgba(14, 20, 36, 0.55);
             --card-hover: rgba(20, 29, 52, 0.75);
             --border: rgba(255, 255, 255, 0.08);
-            --border-hover: rgba(99, 102, 241, 0.45);
+            --border-hover: rgba(34, 197, 94, 0.45);
             
             /* AI Cyber Color Palette */
-            --accent-purple: #6366f1;
-            --accent-cyan: #f59e0b;
-            --accent-emerald: #14b8a6;
+            --accent-purple: #22c55e;
+            --accent-cyan: #4ade80;
+            --accent-emerald: #16a34a;
             
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
@@ -166,11 +166,11 @@
             display: grid;
             place-items: center;
             border-radius: 10px;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.25), rgba(245, 158, 11, 0.25));
-            border: 1px solid rgba(99, 102, 241, 0.4);
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.25), rgba(74, 222, 128, 0.25));
+            border: 1px solid rgba(34, 197, 94, 0.4);
             color: var(--text-main);
             font-size: 13px;
-            box-shadow: 0 0 15px rgba(99, 102, 241, 0.2);
+            box-shadow: 0 0 15px rgba(34, 197, 94, 0.2);
             transition: var(--transition);
         }
 
@@ -198,19 +198,19 @@
 
         .nav-cta {
             padding: 9px 18px;
-            border: 1px solid rgba(99, 102, 241, 0.3);
+            border: 1px solid rgba(34, 197, 94, 0.3);
             border-radius: var(--radius-sm);
-            background: rgba(99, 102, 241, 0.1);
+            background: rgba(34, 197, 94, 0.1);
             color: var(--text-main) !important;
             font-size: 12px;
             font-weight: 600;
-            box-shadow: 0 0 15px rgba(99, 102, 241, 0.15);
+            box-shadow: 0 0 15px rgba(34, 197, 94, 0.15);
         }
 
         .nav-cta:hover {
             border-color: var(--accent-cyan);
-            background: rgba(245, 158, 11, 0.15);
-            box-shadow: 0 0 20px rgba(245, 158, 11, 0.25);
+            background: rgba(74, 222, 128, 0.15);
+            box-shadow: 0 0 20px rgba(74, 222, 128, 0.25);
             transform: translateY(-1px);
         }
 
@@ -241,10 +241,10 @@
             align-items: center;
             gap: 8px;
             padding: 6px 14px;
-            border: 1px solid rgba(20, 184, 166, 0.3);
-            background: rgba(20, 184, 166, 0.08);
+            border: 1px solid rgba(22, 163, 74, 0.3);
+            background: rgba(22, 163, 74, 0.08);
             border-radius: 100px;
-            color: #5eead4;
+            color: #86efac;
             font-size: 12px;
             font-weight: 500;
             margin-bottom: 24px;
@@ -327,12 +327,12 @@
         .btn-primary {
             background: linear-gradient(135deg, var(--accent-purple), var(--accent-cyan));
             color: #fff;
-            box-shadow: 0 0 25px rgba(99, 102, 241, 0.35);
+            box-shadow: 0 0 25px rgba(34, 197, 94, 0.35);
         }
 
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 0 35px rgba(245, 158, 11, 0.5);
+            box-shadow: 0 0 35px rgba(74, 222, 128, 0.5);
         }
 
         .btn-secondary {
@@ -359,7 +359,7 @@
             width: 440px;
             height: 440px;
             border-radius: 50%;
-            border: 1px dashed rgba(99, 102, 241, 0.2);
+            border: 1px dashed rgba(34, 197, 94, 0.2);
             animation: rotateRadar 30s linear infinite;
             pointer-events: none;
         }
@@ -384,7 +384,7 @@
         .profile-card:hover {
             border-color: var(--border-hover);
             transform: translateY(-4px);
-            box-shadow: 0 25px 60px rgba(99, 102, 241, 0.2);
+            box-shadow: 0 25px 60px rgba(34, 197, 94, 0.2);
         }
 
         .profile-photo {
@@ -416,7 +416,7 @@
             font-size: 50px;
             margin-bottom: 12px;
             display: block;
-            filter: drop-shadow(0 0 15px rgba(245, 158, 11, 0.4));
+            filter: drop-shadow(0 0 15px rgba(74, 222, 128, 0.4));
         }
 
         .profile-info {
@@ -491,7 +491,7 @@
         .about-highlight {
             padding: 18px 20px;
             border-left: 2px solid var(--accent-purple);
-            background: linear-gradient(90deg, rgba(99, 102, 241, 0.1), transparent);
+            background: linear-gradient(90deg, rgba(34, 197, 94, 0.1), transparent);
             color: var(--text-main);
             border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
             font-size: 13px;
@@ -513,7 +513,7 @@
         }
 
         .stat:hover {
-            border-color: rgba(245, 158, 11, 0.4);
+            border-color: rgba(74, 222, 128, 0.4);
             background: var(--card-hover);
             transform: translateY(-3px);
         }
@@ -613,6 +613,41 @@
             gap: 6px;
         }
 
+        .tags .tool-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 10px 5px 5px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            color: var(--text-main);
+            font-size: 11px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .tool-badge-icon {
+            display: grid;
+            place-items: center;
+            width: 18px;
+            height: 18px;
+            border-radius: 6px;
+            font-size: 10px;
+            font-weight: 800;
+            color: #fff;
+            flex-shrink: 0;
+        }
+
+        .tool-zapier .tool-badge-icon { background: #ff4a00; }
+        .tool-make .tool-badge-icon { background: #6d00cc; }
+        .tool-n8n .tool-badge-icon { background: #ea4b71; font-size: 7px; }
+        .tool-ghl .tool-badge-icon { background: #0ea15a; }
+
+        .skill-card:hover .tool-badge {
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
         .tags span {
             padding: 5px 10px;
             background: rgba(255, 255, 255, 0.03);
@@ -666,6 +701,13 @@
         .flow-node small {
             font-size: 10px;
             color: var(--accent-cyan);
+        }
+
+        .flow-tools {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            margin-top: 4px;
         }
 
         .flow-pipe {
@@ -723,7 +765,7 @@
         }
 
         .project:hover {
-            border-color: rgba(245, 158, 11, 0.45);
+            border-color: rgba(74, 222, 128, 0.45);
             background: var(--card-hover);
             transform: translateY(-6px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
@@ -915,8 +957,8 @@
             width: 42px;
             height: 42px;
             border-radius: var(--radius-sm);
-            background: rgba(99, 102, 241, 0.12);
-            border: 1px solid rgba(99, 102, 241, 0.25);
+            background: rgba(34, 197, 94, 0.12);
+            border: 1px solid rgba(34, 197, 94, 0.25);
             display: grid;
             place-items: center;
             color: var(--accent-purple);
@@ -926,7 +968,7 @@
         }
 
         .contact-card:hover .contact-icon {
-            background: rgba(245, 158, 11, 0.2);
+            background: rgba(74, 222, 128, 0.2);
             border-color: var(--accent-cyan);
             color: var(--accent-cyan);
         }
@@ -1051,10 +1093,10 @@
         .modal-stack span {
             padding: 5px 10px;
             border-radius: var(--radius-sm);
-            background: rgba(245, 158, 11, 0.1);
+            background: rgba(74, 222, 128, 0.1);
             color: var(--accent-cyan);
             font-size: 11px;
-            border: 1px solid rgba(245, 158, 11, 0.25);
+            border: 1px solid rgba(74, 222, 128, 0.25);
         }
 
         /* REVEAL ANIMATIONS ON SCROLL */
@@ -1279,9 +1321,9 @@
                         <div class="skill-icon">🤖</div>
                         <h3>AI & Automation</h3>
                         <div class="tags">
-                            <span>n8n</span>
-                            <span>Make.com</span>
-                            <span>Zapier</span>
+                            <span class="tool-badge tool-n8n"><span class="tool-badge-icon">n8n</span>n8n</span>
+                            <span class="tool-badge tool-make"><span class="tool-badge-icon">M</span>Make.com</span>
+                            <span class="tool-badge tool-zapier"><span class="tool-badge-icon">⚡</span>Zapier</span>
                             <span>OpenAI</span>
                             <span>Google Gemini</span>
                             <span>AI Agents</span>
@@ -1305,7 +1347,7 @@
                         <div class="skill-icon">📈</div>
                         <h3>CRM & Pipeline</h3>
                         <div class="tags">
-                            <span>GoHighLevel</span>
+                            <span class="tool-badge tool-ghl"><span class="tool-badge-icon">G</span>GoHighLevel</span>
                             <span>HubSpot</span>
                             <span>Lead Routing</span>
                             <span>Appointment Sync</span>
@@ -1357,7 +1399,11 @@
                     <div class="flow-node">
                         <div class="flow-icon">⚡</div>
                         <strong>Workflow</strong>
-                        <small>n8n / Make / Zapier</small>
+                        <div class="flow-tools">
+                            <span class="tool-n8n"><span class="tool-badge-icon">n8n</span></span>
+                            <span class="tool-make"><span class="tool-badge-icon">M</span></span>
+                            <span class="tool-zapier"><span class="tool-badge-icon">⚡</span></span>
+                        </div>
                     </div>
                     <div class="flow-pipe"></div>
                     <div class="flow-node">
