@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,26 +13,50 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
     <style>
+        /* ===================================================
+           THEME VARIABLES (DARK / LIGHT)
+        =================================================== */
         :root {
-            --bg: #06080e;
-            --bg-elevated: #0a0e1a;
-            --card-bg: rgba(14, 20, 36, 0.55);
-            --card-hover: rgba(20, 29, 52, 0.75);
-            --border: rgba(255, 255, 255, 0.08);
-            --border-hover: rgba(34, 197, 94, 0.45);
-            
-            /* AI Cyber Color Palette */
             --accent-purple: #22c55e;
             --accent-cyan: #4ade80;
             --accent-emerald: #16a34a;
-            
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
             --container: 1140px;
             --radius-sm: 8px;
             --radius-md: 16px;
             --radius-lg: 24px;
             --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* DARK THEME (DEFAULT) */
+        [data-theme="dark"] {
+            --bg: #06080e;
+            --bg-elevated: #0a0e1a;
+            --card-bg: rgba(14, 20, 36, 0.55);
+            --card-hover: rgba(20, 29, 52, 0.75);
+            --nav-bg: rgba(6, 8, 14, 0.85);
+            --border: rgba(255, 255, 255, 0.08);
+            --border-hover: rgba(34, 197, 94, 0.45);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --grid-line: rgba(255, 255, 255, 0.02);
+            --modal-bg: #0c101c;
+            --shadow-card: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        /* LIGHT THEME */
+        [data-theme="light"] {
+            --bg: #f8fafc;
+            --bg-elevated: #ffffff;
+            --card-bg: rgba(255, 255, 255, 0.85);
+            --card-hover: #ffffff;
+            --nav-bg: rgba(248, 250, 252, 0.85);
+            --border: rgba(15, 23, 42, 0.09);
+            --border-hover: rgba(22, 163, 74, 0.55);
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --grid-line: rgba(0, 0, 0, 0.035);
+            --modal-bg: #ffffff;
+            --shadow-card: 0 14px 30px rgba(0, 0, 0, 0.07);
         }
 
         * {
@@ -52,6 +76,7 @@
             overflow-x: hidden;
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
+            transition: background-color 0.35s ease, color 0.35s ease;
         }
 
         body.modal-open {
@@ -76,8 +101,8 @@
             position: absolute;
             inset: 0;
             background-image: 
-                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+                linear-gradient(var(--grid-line) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
             background-size: 50px 50px;
             mask-image: radial-gradient(circle at 50% 30%, black 40%, transparent 80%);
         }
@@ -86,7 +111,7 @@
             position: absolute;
             border-radius: 50%;
             filter: blur(120px);
-            opacity: 0.25;
+            opacity: 0.22;
             animation: floatGlow 14s infinite alternate ease-in-out;
         }
 
@@ -139,7 +164,7 @@
         }
 
         header.scrolled {
-            background: rgba(6, 8, 14, 0.85);
+            background: var(--nav-bg);
             backdrop-filter: blur(16px);
             border-bottom-color: var(--border);
         }
@@ -179,10 +204,16 @@
             border-color: var(--accent-cyan);
         }
 
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
         nav {
             display: flex;
             align-items: center;
-            gap: 30px;
+            gap: 26px;
         }
 
         nav a {
@@ -212,6 +243,26 @@
             background: rgba(74, 222, 128, 0.15);
             box-shadow: 0 0 20px rgba(74, 222, 128, 0.25);
             transform: translateY(-1px);
+        }
+
+        /* THEME TOGGLE BUTTON */
+        .theme-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            display: grid;
+            place-items: center;
+            transition: var(--transition);
+        }
+
+        .theme-btn:hover {
+            transform: scale(1.08);
+            border-color: var(--border-hover);
         }
 
         .menu-btn {
@@ -250,6 +301,11 @@
             margin-bottom: 24px;
         }
 
+        [data-theme="light"] .availability {
+            color: #15803d;
+            background: rgba(22, 163, 74, 0.12);
+        }
+
         .availability-dot {
             width: 7px;
             height: 7px;
@@ -270,7 +326,7 @@
             font-weight: 700;
             margin-bottom: 14px;
             text-transform: uppercase;
-            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));
+            background: linear-gradient(90deg, var(--accent-emerald), var(--accent-cyan));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -283,13 +339,6 @@
             letter-spacing: -2px;
             margin-bottom: 18px;
             font-weight: 700;
-        }
-
-        .gradient-name {
-            background: linear-gradient(120deg, #fff 30%, var(--accent-cyan) 70%, var(--accent-purple) 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
         }
 
         .hero-role {
@@ -342,8 +391,8 @@
         }
 
         .btn-secondary:hover {
-            border-color: rgba(255, 255, 255, 0.25);
-            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(34, 197, 94, 0.4);
+            background: rgba(34, 197, 94, 0.05);
             transform: translateY(-3px);
         }
 
@@ -377,14 +426,13 @@
             backdrop-filter: blur(20px);
             padding: 14px;
             position: relative;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            box-shadow: var(--shadow-card);
             transition: var(--transition);
         }
 
         .profile-card:hover {
             border-color: var(--border-hover);
             transform: translateY(-4px);
-            box-shadow: 0 25px 60px rgba(34, 197, 94, 0.2);
         }
 
         .profile-photo {
@@ -392,7 +440,7 @@
             border-radius: var(--radius-md);
             overflow: hidden;
             background: var(--bg-elevated);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
             position: relative;
         }
 
@@ -433,7 +481,7 @@
             font-weight: 600;
         }
 
-        /* Ticker container na nagtatago sa labis na overflow */
+        /* Ticker container */
         .ticker-wrapper {
             width: 100%;
             overflow: hidden;
@@ -443,7 +491,6 @@
             -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
         }
 
-        /* Ang mismong gumagalaw na track */
         .ticker-track {
             display: inline-flex;
             align-items: center;
@@ -452,21 +499,15 @@
             animation: scrollTools 12s linear infinite;
         }
 
-        /* Hihinto ang takbo kapag itinapat ang mouse cursor */
         .ticker-wrapper:hover .ticker-track {
             animation-play-state: paused;
         }
 
         @keyframes scrollTools {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-50%);
-            }
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
 
-        /* Disenyo ng animated tool pills */
         .tool-pill {
             display: inline-flex;
             align-items: center;
@@ -481,12 +522,15 @@
             transition: var(--transition);
         }
 
-        .tool-pill:hover {
-            transform: translateY(-2px);
-            border-color: rgba(255, 255, 255, 0.2);
+        [data-theme="light"] .tool-pill {
+            background: rgba(0, 0, 0, 0.04);
         }
 
-        /* Custom logo icon squares na may pulsing glow */
+        .tool-pill:hover {
+            transform: translateY(-2px);
+            border-color: var(--border-hover);
+        }
+
         .tool-ico {
             display: grid;
             place-items: center;
@@ -523,7 +567,7 @@
             display: block;
             margin-bottom: 10px;
             text-transform: uppercase;
-            color: var(--accent-cyan);
+            color: var(--accent-emerald);
         }
 
         .section-title {
@@ -607,7 +651,7 @@
         .stat-number {
             font-family: "Space Grotesk", sans-serif;
             font-size: 22px;
-            color: var(--accent-cyan);
+            color: var(--accent-emerald);
             font-weight: 700;
             margin-bottom: 8px;
         }
@@ -658,7 +702,7 @@
             border-color: var(--border-hover);
             background: var(--card-hover);
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            box-shadow: var(--shadow-card);
         }
 
         .skill-card:hover::after {
@@ -671,9 +715,6 @@
             display: inline-block;
             animation: iconFloat 3.2s ease-in-out infinite;
         }
-
-        .skill-card:nth-child(2n) .skill-icon { animation-delay: -1.1s; }
-        .skill-card:nth-child(3n) .skill-icon { animation-delay: -2.1s; }
 
         @keyframes iconFloat {
             0%, 100% { transform: translateY(0); }
@@ -733,12 +774,16 @@
             transition: var(--transition);
         }
 
+        [data-theme="light"] .tags span {
+            background: rgba(0, 0, 0, 0.03);
+        }
+
         .skill-card:hover .tags span {
-            border-color: rgba(255, 255, 255, 0.15);
+            border-color: var(--border-hover);
             color: var(--text-main);
         }
 
-        /* PULSING AUTOMATION PIPELINE (ANIMATED) */
+        /* PULSING AUTOMATION PIPELINE */
         .flow-container {
             margin-top: 50px;
             display: flex;
@@ -775,7 +820,7 @@
 
         .flow-node small {
             font-size: 10px;
-            color: var(--accent-cyan);
+            color: var(--accent-emerald);
         }
 
         .flow-tools {
@@ -792,6 +837,10 @@
             position: relative;
             margin: 0 10px;
             min-width: 40px;
+        }
+
+        [data-theme="light"] .flow-pipe {
+            background: rgba(0, 0, 0, 0.08);
         }
 
         .flow-pipe::after {
@@ -813,12 +862,50 @@
             100% { left: 95%; opacity: 0; }
         }
 
-        /* PROJECTS */
+        /* ===================================================
+           PROJECTS & CATEGORY TABS / FILTERS
+        =================================================== */
         .projects-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
-            margin-bottom: 45px;
+            margin-bottom: 30px;
+        }
+
+        /* Category Filter Buttons */
+        .project-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 35px;
+        }
+
+        .filter-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 8px 18px;
+            border-radius: 100px;
+            border: 1px solid var(--border);
+            background: var(--card-bg);
+            color: var(--text-muted);
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-btn:hover {
+            border-color: var(--accent-purple);
+            color: var(--text-main);
+            transform: translateY(-2px);
+        }
+
+        .filter-btn.active {
+            background: linear-gradient(135deg, var(--accent-purple), var(--accent-cyan));
+            border-color: transparent;
+            color: #ffffff;
+            box-shadow: 0 0 20px rgba(34, 197, 94, 0.35);
         }
 
         .project-grid {
@@ -837,13 +924,19 @@
             transition: var(--transition);
             min-height: 340px;
             position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project.hide {
+            display: none;
         }
 
         .project:hover {
-            border-color: rgba(74, 222, 128, 0.45);
+            border-color: var(--border-hover);
             background: var(--card-hover);
             transform: translateY(-6px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            box-shadow: var(--shadow-card);
         }
 
         .project-image {
@@ -907,7 +1000,7 @@
         .project-type {
             font-size: 10px;
             letter-spacing: 1.2px;
-            color: var(--accent-purple);
+            color: var(--accent-emerald);
             font-weight: 700;
         }
 
@@ -954,9 +1047,13 @@
             border-radius: 4px;
         }
 
+        [data-theme="light"] .project-tools span {
+            background: rgba(0, 0, 0, 0.04);
+        }
+
         .view-project {
             font-size: 12px;
-            color: var(--accent-cyan);
+            color: var(--accent-emerald);
             font-weight: 600;
             transition: var(--transition);
         }
@@ -971,10 +1068,11 @@
             padding: 85px 30px;
             border: 1px solid var(--border);
             border-radius: var(--radius-lg);
-            background: linear-gradient(180deg, rgba(14, 20, 36, 0.6), rgba(6, 8, 14, 0.8));
+            background: var(--card-bg);
             margin: 90px 0;
             position: relative;
             overflow: hidden;
+            box-shadow: var(--shadow-card);
         }
 
         .cta-box::before {
@@ -1025,7 +1123,7 @@
             border-color: var(--border-hover);
             background: var(--card-hover);
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            box-shadow: var(--shadow-card);
         }
 
         .contact-icon {
@@ -1080,7 +1178,7 @@
             position: fixed;
             inset: 0;
             z-index: 2000;
-            background: rgba(4, 6, 12, 0.88);
+            background: rgba(4, 6, 12, 0.85);
             backdrop-filter: blur(14px);
             display: none;
             align-items: center;
@@ -1096,7 +1194,7 @@
             width: min(580px, 100%);
             border: 1px solid var(--border-hover);
             border-radius: var(--radius-md);
-            background: #0c101c;
+            background: var(--modal-bg);
             padding: 32px;
             position: relative;
             box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
@@ -1126,7 +1224,7 @@
 
         .modal-close:hover {
             color: var(--text-main);
-            border-color: rgba(255, 255, 255, 0.3);
+            border-color: var(--border-hover);
         }
 
         .modal-image {
@@ -1169,7 +1267,7 @@
             padding: 5px 10px;
             border-radius: var(--radius-sm);
             background: rgba(74, 222, 128, 0.1);
-            color: var(--accent-cyan);
+            color: var(--accent-emerald);
             font-size: 11px;
             border: 1px solid rgba(74, 222, 128, 0.25);
         }
@@ -1222,12 +1320,13 @@
                 top: 72px;
                 left: 5%;
                 width: 90%;
-                background: #0c101c;
+                background: var(--bg-elevated);
                 border: 1px solid var(--border);
                 border-radius: var(--radius-md);
                 padding: 22px;
                 flex-direction: column;
                 gap: 16px;
+                box-shadow: var(--shadow-card);
             }
             nav.active {
                 display: flex;
@@ -1279,15 +1378,22 @@
                 <div>John Leanard Guiriba</div>
             </a>
 
-            <nav id="nav">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact" class="nav-cta">Let's Connect</a>
-            </nav>
+            <div class="nav-right">
+                <nav id="nav">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact" class="nav-cta">Let's Connect</a>
+                </nav>
 
-            <button class="menu-btn" id="menuBtn" aria-label="Toggle Menu">☰</button>
+                <!-- THEME TOGGLE BUTTON -->
+                <button class="theme-btn" id="themeToggle" aria-label="Toggle Light/Dark Theme" title="Toggle Theme">
+                    🌙
+                </button>
+
+                <button class="menu-btn" id="menuBtn" aria-label="Toggle Menu">☰</button>
+            </div>
         </div>
     </header>
 
@@ -1333,13 +1439,12 @@
                             <strong>Automation Architecture</strong>
                             <div class="ticker-wrapper">
                                 <div class="ticker-track">
-                                    <!-- Unang set ng badges -->
                                     <span class="tool-pill zapier"><span class="tool-ico">⚡</span> Zapier</span>
                                     <span class="tool-pill make"><span class="tool-ico">M</span> Make</span>
                                     <span class="tool-pill n8n"><span class="tool-ico">n8n</span> n8n</span>
                                     <span class="tool-pill ghl"><span class="tool-ico">G</span> GoHighLevel</span>
 
-                                    <!-- Pangalawang set (seamless infinite loop) -->
+                                    <!-- Duplicate set for infinite loop -->
                                     <span class="tool-pill zapier"><span class="tool-ico">⚡</span> Zapier</span>
                                     <span class="tool-pill make"><span class="tool-ico">M</span> Make</span>
                                     <span class="tool-pill n8n"><span class="tool-ico">n8n</span> n8n</span>
@@ -1373,7 +1478,7 @@
                         <!-- MISSION & VISION -->
                         <div class="mission-vision-grid">
                             <div class="about-highlight">
-                                <strong>Mission:</strong> Turn complex manual operations into unified, intelligent, and hands off digital pipelines.
+                                <strong>Mission:</strong> Turn complex manual operations into unified, intelligent, and hands-off digital pipelines.
                             </div>
                             <div class="about-highlight vision">
                                 <strong>Vision:</strong> Empower businesses to scale effortlessly through seamless, reliable, and autonomous AI-driven workflows.
@@ -1505,7 +1610,7 @@
                     </div>
                 </div>
 
-                <!-- ANIMATED INTERACTIVE FLOW PIPELINE -->
+                <!-- FLOW DIAGRAM -->
                 <div class="flow-container reveal">
                     <div class="flow-node">
                         <div class="flow-icon">📥</div>
@@ -1544,7 +1649,7 @@
             </div>
         </section>
 
-        <!-- PROJECTS -->
+        <!-- PROJECTS SECTION -->
         <section id="projects" class="section">
             <div class="container">
                 <div class="projects-header">
@@ -1555,9 +1660,18 @@
                     <p class="section-subtitle reveal">Click any project card to review complete automation architecture details.</p>
                 </div>
 
+                <!-- CATEGORY / TOOL FILTER BUTTONS -->
+                <div class="project-filters reveal">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="zapier">⚡ Zapier</button>
+                    <button class="filter-btn" data-filter="make">🟣 Make.com</button>
+                    <button class="filter-btn" data-filter="ai-agents">🤖 AI Agents</button>
+                </div>
+
+                <!-- PROJECT CARDS -->
                 <div class="project-grid">
-                    <!-- PROJECT 1 -->
-                    <article class="project reveal" data-project="0">
+                    <!-- PROJECT 1 (Zapier) -->
+                    <article class="project reveal" data-category="zapier" data-project="0">
                         <div class="project-image">
                             <img src="assets/project-1.jpg" alt="Project 1 screenshot" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                             <div class="project-image-placeholder">
@@ -1582,8 +1696,8 @@
                         </div>
                     </article>
 
-                    <!-- PROJECT 2 -->
-                    <article class="project reveal" data-project="1">
+                    <!-- PROJECT 2 (Zapier) -->
+                    <article class="project reveal" data-category="zapier" data-project="1">
                         <div class="project-image">
                             <img src="assets/project-2.jpg" alt="Project 2 screenshot" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                             <div class="project-image-placeholder">
@@ -1609,8 +1723,8 @@
                         </div>
                     </article>
 
-                    <!-- PROJECT 3 -->
-                    <article class="project reveal" data-project="2">
+                    <!-- PROJECT 3 (Zapier) -->
+                    <article class="project reveal" data-category="zapier" data-project="2">
                         <div class="project-image">
                             <img src="assets/project-3.jpg" alt="Project 3 screenshot" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                             <div class="project-image-placeholder">
@@ -1635,8 +1749,8 @@
                         </div>
                     </article>
 
-                    <!-- PROJECT 4 -->
-                    <article class="project reveal" data-project="3">
+                    <!-- PROJECT 4 (Make.com) -->
+                    <article class="project reveal" data-category="make" data-project="3">
                         <div class="project-image">
                             <img src="assets/project-4.jpg" alt="Project 4 screenshot" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                             <div class="project-image-placeholder">
@@ -1646,23 +1760,24 @@
                         </div>
                         <div class="project-body">
                             <div class="project-top">
-                                <span class="project-type">PROJECT MANAGEMENT</span>
+                                <span class="project-type">WORKFLOW AUTOMATION</span>
                                 <span class="project-number">04</span>
                             </div>
-                            <h3>Production Task Delegation</h3>
-                            <p>Dispatches incoming client onboarding information into organized project management cards on Trello.</p>
+                            <h3>Production Task Delegation & Sync</h3>
+                            <p>Multi-step Make.com scenario dispatching onboarding data into organized Trello boards and Slack notices.</p>
                             <div class="project-bottom">
                                 <div class="project-tools">
-                                    <span>Zapier</span>
+                                    <span>Make.com</span>
                                     <span>Trello</span>
+                                    <span>Webhooks</span>
                                 </div>
                                 <span class="view-project">Details →</span>
                             </div>
                         </div>
                     </article>
 
-                    <!-- PROJECT 5 -->
-                    <article class="project reveal" data-project="4">
+                    <!-- PROJECT 5 (AI Agents) -->
+                    <article class="project reveal" data-category="ai-agents" data-project="4">
                         <div class="project-image">
                             <img src="assets/project-5.jpg" alt="Project 5 screenshot" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                             <div class="project-image-placeholder">
@@ -1687,8 +1802,8 @@
                         </div>
                     </article>
 
-                    <!-- PROJECT 6 -->
-                    <article class="project reveal" data-project="5">
+                    <!-- PROJECT 6 (AI Agents) -->
+                    <article class="project reveal" data-category="ai-agents" data-project="5">
                         <div class="project-image">
                             <img src="assets/project-6.jpg" alt="Project 6 screenshot" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                             <div class="project-image-placeholder">
@@ -1764,7 +1879,7 @@
         <div class="container footer-inner">
             <div>JLG • AI Automation Specialist</div>
             <div>© <span id="year"></span> John Leanard Guiriba</div>
-            <a href="#home" style="color: var(--accent-cyan);">Back to top ↑</a>
+            <a href="#home" style="color: var(--accent-emerald);">Back to top ↑</a>
         </div>
     </footer>
 
@@ -1784,6 +1899,51 @@
 
     <!-- JAVASCRIPT -->
     <script>
+        // ==========================================
+        // LIGHT / DARK THEME TOGGLE
+        // ==========================================
+        const themeToggle = document.getElementById("themeToggle");
+        const root = document.documentElement;
+
+        // I-check kung may naka-save na preference
+        const savedTheme = localStorage.getItem("preferred-theme") || "dark";
+        root.setAttribute("data-theme", savedTheme);
+        themeToggle.textContent = savedTheme === "light" ? "☀️" : "🌙";
+
+        themeToggle.addEventListener("click", () => {
+            const currentTheme = root.getAttribute("data-theme");
+            const newTheme = currentTheme === "dark" ? "light" : "dark";
+            
+            root.setAttribute("data-theme", newTheme);
+            localStorage.setItem("preferred-theme", newTheme);
+            themeToggle.textContent = newTheme === "light" ? "☀️" : "🌙";
+        });
+
+        // ==========================================
+        // PROJECT CATEGORY FILTER (ZAPIER / MAKE / AI)
+        // ==========================================
+        const filterBtns = document.querySelectorAll(".filter-btn");
+        const projectCards = document.querySelectorAll(".project");
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener("click", () => {
+                // Tanggalin ang active sa lahat ng button
+                filterBtns.forEach(b => b.classList.remove("active"));
+                btn.classList.add("active");
+
+                const filter = btn.dataset.filter;
+
+                projectCards.forEach(card => {
+                    const cardCategory = card.dataset.category;
+                    if (filter === "all" || cardCategory === filter) {
+                        card.classList.remove("hide");
+                    } else {
+                        card.classList.add("hide");
+                    }
+                });
+            });
+        });
+
         // Header scroll effect
         const header = document.getElementById("header");
         window.addEventListener("scroll", () => {
@@ -1846,24 +2006,24 @@
                 image: "assets/project-3.jpg"
             },
             {
-                type: "PROJECT MANAGEMENT",
-                title: "Production Task Delegation Pipeline",
-                description: "An onboarding pipeline that ingests new client questionnaires and automatically generates cards with checklists on Trello boards.",
-                tools: ["Zapier", "Google Forms", "Trello"],
+                type: "WORKFLOW AUTOMATION",
+                title: "Production Task Delegation & Sync",
+                description: "An onboarding pipeline in Make.com that ingests new client questionnaires and automatically routes tasks to Trello while notifying team members on Slack.",
+                tools: ["Make.com", "Trello", "Slack", "Webhooks"],
                 image: "assets/project-4.jpg"
             },
             {
                 type: "CONVERSATIONAL AI",
                 title: "24/7 Agency Inbound Support Bot",
                 description: "A customer support AI agent powered by OpenAI to triage frequently asked questions, collect contact info, and route complex tickets to humans.",
-                tools: ["Zapier AI", "OpenAI", "Google Gemini"],
+                tools: ["OpenAI", "Zapier AI", "Google Gemini"],
                 image: "assets/project-5.jpg"
             },
             {
                 type: "AI AGENTS",
                 title: "Client Intake & Qualification Bot",
                 description: "A multi-step conversational agent that qualifies inbound prospects based on budget and requirements before directing high-value leads to sales reps.",
-                tools: ["Zapier AI", "OpenAI", "Google Gemini"],
+                tools: ["Gemini", "OpenAI", "Zapier AI"],
                 image: "assets/project-6.jpg"
             }
         ];
