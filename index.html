@@ -484,6 +484,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            display: block;
         }
 
         .profile-placeholder {
@@ -509,6 +510,7 @@
             flex-direction: column;
             gap: 8px;
             overflow: hidden;
+            align-items: center;
         }
 
         /* NAKASENTRO ANG AUTOMATION ARCHITECTURE SA LAHAT NG SCREEN */
@@ -1197,7 +1199,7 @@
             word-break: break-all;
         }
 
-        /* FOOTER (NAKASENTRO ANG COPYRIGHT SA LAHAT NG SCREEN) */
+        /* FOOTER (PERPEKTONG NAKASENTRO ANG COPYRIGHT SA LAHAT NG DEVICE) */
         footer {
             border-top: 1px solid var(--border);
             padding: 32px 0;
@@ -1206,23 +1208,29 @@
         }
 
         .footer-inner {
-            display: grid;
-            grid-template-columns: 1fr auto 1fr;
+            position: relative;
+            display: flex;
+            justify-content: center;
             align-items: center;
-            width: 100%;
+            min-height: 24px;
+            text-align: center;
         }
 
         .footer-copy {
-            grid-column: 2;
+            position: relative;
+            margin: 0 auto;
             text-align: center;
-            white-space: nowrap;
+            display: inline-block;
         }
 
         .footer-back-to-top {
-            grid-column: 3;
-            justify-self: end;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
             color: var(--accent-emerald);
             transition: var(--transition);
+            white-space: nowrap;
         }
 
         .footer-back-to-top:hover {
@@ -1667,14 +1675,17 @@
                 height: 10px;
                 animation: flowStreamVert 2s infinite ease-in-out;
             }
+            /* Mobile Footer stack layout */
             .footer-inner {
                 display: flex;
                 flex-direction: column;
-                gap: 10px;
+                gap: 12px;
                 text-align: center;
             }
-            .footer-copy, .footer-back-to-top {
-                justify-self: center;
+            .footer-back-to-top {
+                position: static;
+                transform: none;
+                margin: 0 auto;
             }
         }
 
@@ -1709,7 +1720,7 @@
                     <a href="#about">About</a>
                     <a href="#skills">Skills</a>
                     <a href="#projects">Projects</a>
-                    <!-- RENAMED TO DOWNLOAD CV WITH LOGO IN NAVBAR -->
+                    <!-- DOWNLOAD CV BUTTON -->
                     <a href="resume.pdf" download="John_Leanard_Guiriba_Resume.pdf" class="nav-resume-btn">
                         <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
@@ -1749,7 +1760,6 @@
                         AI Automation Specialist crafting smart, reliable systems that cut repetitive work, connect your tools, and keep your business data organized.
                     </p>
 
-                    <!-- CLEANED HERO BUTTONS (REMOVED DOWNLOAD CV HERE) -->
                     <div class="hero-buttons">
                         <a href="#projects" class="btn btn-primary">View my work ↗</a>
                         <a href="#contact" class="btn btn-secondary">Let's Talk</a>
@@ -1759,7 +1769,7 @@
                 <div class="hero-visual reveal">
                     <div class="radar-ring"></div>
                     <div class="profile-card">
-                        <!-- PROFILE PHOTO LINKED TO profile.png -->
+                        <!-- PROFILE PHOTO -->
                         <div class="profile-photo">
                             <img src="profile.png" alt="John Leanard Guiriba - Profile Photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
                             <div class="profile-placeholder" style="display: none;">
@@ -1771,7 +1781,7 @@
                             </div>
                         </div>
 
-                        <!-- AUTOMATION TOOLS TICKER ANIMATION (NAKASENTRO ANG HEADING) -->
+                        <!-- AUTOMATION TOOLS TICKER ANIMATION -->
                         <div class="profile-info">
                             <strong>Automation Architecture</strong>
                             <div class="ticker-wrapper">
@@ -2358,10 +2368,9 @@
         </section>
     </main>
 
-    <!-- FOOTER (PERPEKTONG NAKASENTRO ANG COPYRIGHT SA LAHAT NG SCREEN) -->
+    <!-- FOOTER -->
     <footer>
         <div class="container footer-inner">
-            <div></div>
             <div class="footer-copy">© <span id="year"></span> John Leanard Guiriba. All rights reserved.</div>
             <a href="#home" class="footer-back-to-top">Back to top ↑</a>
         </div>
