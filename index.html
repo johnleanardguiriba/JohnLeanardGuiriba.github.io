@@ -484,7 +484,6 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            display: block;
         }
 
         .profile-placeholder {
@@ -512,9 +511,14 @@
             overflow: hidden;
         }
 
+        /* NAKASENTRO ANG AUTOMATION ARCHITECTURE SA LAHAT NG SCREEN */
         .profile-info strong {
             font-size: 13px;
             font-weight: 600;
+            text-align: center;
+            width: 100%;
+            display: block;
+            margin: 0 auto;
         }
 
         /* Ticker container */
@@ -1193,7 +1197,7 @@
             word-break: break-all;
         }
 
-        /* FOOTER */
+        /* FOOTER (NAKASENTRO ANG COPYRIGHT SA LAHAT NG SCREEN) */
         footer {
             border-top: 1px solid var(--border);
             padding: 32px 0;
@@ -1202,9 +1206,27 @@
         }
 
         .footer-inner {
-            display: flex;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
             align-items: center;
+            width: 100%;
+        }
+
+        .footer-copy {
+            grid-column: 2;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .footer-back-to-top {
+            grid-column: 3;
+            justify-self: end;
+            color: var(--accent-emerald);
+            transition: var(--transition);
+        }
+
+        .footer-back-to-top:hover {
+            color: var(--accent-cyan);
         }
 
         /* MODAL */
@@ -1645,6 +1667,15 @@
                 height: 10px;
                 animation: flowStreamVert 2s infinite ease-in-out;
             }
+            .footer-inner {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+            .footer-copy, .footer-back-to-top {
+                justify-self: center;
+            }
         }
 
         @keyframes flowStreamVert {
@@ -1740,7 +1771,7 @@
                             </div>
                         </div>
 
-                        <!-- AUTOMATION TOOLS TICKER ANIMATION -->
+                        <!-- AUTOMATION TOOLS TICKER ANIMATION (NAKASENTRO ANG HEADING) -->
                         <div class="profile-info">
                             <strong>Automation Architecture</strong>
                             <div class="ticker-wrapper">
@@ -2327,11 +2358,12 @@
         </section>
     </main>
 
-    <!-- FOOTER -->
+    <!-- FOOTER (PERPEKTONG NAKASENTRO ANG COPYRIGHT SA LAHAT NG SCREEN) -->
     <footer>
         <div class="container footer-inner">
-            <div>© <span id="year"></span> John Leanard Guiriba. All rights reserved.</div>
-            <a href="#home" style="color: var(--accent-emerald);">Back to top ↑</a>
+            <div></div>
+            <div class="footer-copy">© <span id="year"></span> John Leanard Guiriba. All rights reserved.</div>
+            <a href="#home" class="footer-back-to-top">Back to top ↑</a>
         </div>
     </footer>
 
