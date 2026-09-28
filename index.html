@@ -560,14 +560,27 @@
             margin-bottom: 18px;
         }
 
+        /* Mission & Vision Styling */
+        .mission-vision-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 24px;
+        }
+
         .about-highlight {
-            padding: 18px 20px;
+            padding: 16px 20px;
             border-left: 2px solid var(--accent-purple);
             background: linear-gradient(90deg, rgba(34, 197, 94, 0.1), transparent);
             color: var(--text-main);
             border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
             font-size: 13px;
-            margin-top: 24px;
+            line-height: 1.6;
+        }
+
+        .about-highlight.vision {
+            border-left-color: var(--accent-cyan);
+            background: linear-gradient(90deg, rgba(74, 222, 128, 0.1), transparent);
         }
 
         .stats {
@@ -1356,8 +1369,15 @@
                         <p>
                             Currently pursuing a Bachelor of Science in Information Technology (Major in Web and Game Development), I combine technical skills, problem-solving, and a strong willingness to learn to build useful automation systems.
                         </p>
-                        <div class="about-highlight">
-                            <strong>Mission:</strong> Turn complex manual operations into unified, intelligent, and hands-off digital pipelines.
+                        
+                        <!-- MISSION & VISION -->
+                        <div class="mission-vision-grid">
+                            <div class="about-highlight">
+                                <strong>Mission:</strong> Turn complex manual operations into unified, intelligent, and hands-off digital pipelines.
+                            </div>
+                            <div class="about-highlight vision">
+                                <strong>Vision:</strong> Empower businesses to scale effortlessly through seamless, reliable, and autonomous AI-driven workflows.
+                            </div>
                         </div>
                     </div>
 
