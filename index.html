@@ -359,14 +359,15 @@
 
         .hero-buttons {
             display: flex;
-            gap: 14px;
+            flex-wrap: wrap;
+            gap: 12px;
         }
 
         .btn {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 13px 24px;
+            padding: 13px 22px;
             border-radius: var(--radius-sm);
             font-size: 13px;
             font-weight: 600;
@@ -1669,11 +1670,12 @@
                     <div class="hero-role">AI Automation Specialist</div>
 
                     <p class="hero-description">
-                        AI Automation Specialist crafting smart, reliable systems that cut repetitive work, connect your tools, and keep your business data organized.
+                        AI Automation Specialist crafting smart, reliable systems that cut repetitive work, connect your tools, and keep your business data organized[cite: 1].
                     </p>
 
                     <div class="hero-buttons">
                         <a href="#projects" class="btn btn-primary">View my work ↗</a>
+                        <a href="resume.pdf" download="John_Leanard_Guiriba_Resume.pdf" class="btn btn-secondary">Download CV 📄</a>
                         <a href="#contact" class="btn btn-secondary">Let's Talk</a>
                     </div>
                 </div>
@@ -1723,22 +1725,22 @@
                 <div class="about-grid">
                     <div class="about-text reveal">
                         <p>
-                            My goal is simple: turn repetitive manual processes into organized, connected, and intelligent workflows.
+                            My goal is simple: turn repetitive manual processes into organized, connected, and intelligent workflows[cite: 1].
                         </p>
                         <p>
-                            I work with n8n, Make.com, Zapier, GoHighLevel, Google Sheets, Google Docs, Notion, (ChatGPT & Gemini), via REST APIs and webhooks to eliminate manual data entry.
+                            I work with n8n, Make.com, Zapier, GoHighLevel, Google Sheets, Google Docs, Notion, (ChatGPT & Gemini), via REST APIs and webhooks to eliminate manual data entry[cite: 1].
                         </p>
                         <p>
-                            Currently pursuing a Bachelor of Science in Information Technology (Major in Web and Game Development), I combine technical skills, problem-solving, and a strong willingness to learn to build useful automation systems.
+                            Currently pursuing a Bachelor of Science in Information Technology (Major in Web and Game Development), I combine technical skills, problem-solving, and a strong willingness to learn to build useful automation systems[cite: 1].
                         </p>
                         
                         <!-- MISSION & VISION -->
                         <div class="mission-vision-grid">
                             <div class="about-highlight">
-                                <strong>Mission:</strong> Turn complex manual operations into unified, intelligent, and hands off digital pipelines.
+                                <strong>Mission:</strong> Turn complex manual operations into unified, intelligent, and hands off digital pipelines[cite: 1].
                             </div>
                             <div class="about-highlight vision">
-                                <strong>Vision:</strong> Empower businesses to scale effortlessly through seamless, reliable, and autonomous AI-driven workflows.
+                                <strong>Vision:</strong> Empower businesses to scale effortlessly through seamless, reliable, and autonomous AI-driven workflows[cite: 1].
                             </div>
                         </div>
                     </div>
@@ -1762,7 +1764,7 @@
                         <div class="stat">
                             <div class="stat-number">04</div>
                             <h3>IT Foundation</h3>
-                            <p>BS Information Technology background with strong logic & system design.</p>
+                            <p>BS Information Technology background with strong logic & system design[cite: 1].</p>
                         </div>
                     </div>
                 </div>
@@ -2258,7 +2260,7 @@
                         </div>
                     </a>
 
-                    <a href="https://www.linkedin.com/in/john-leanard-guiriba-1447413a8/" target="_blank" rel="noopener" class="contact-card reveal">
+                    <a href="https://www.linkedin.com/in/john-leanard-guiriba-35a589404/" target="_blank" rel="noopener" class="contact-card reveal">
                         <div class="contact-icon">in</div>
                         <div>
                             <small>LINKEDIN</small>
@@ -2304,7 +2306,7 @@
     </div>
 
     <!-- ===================================================
-         JLG ASSISTANT WIDGET (CLEAN AVATAR & HEADER)
+         JLG ASSISTANT WIDGET (WITH QUICK PROMPT CHIPS)
     =================================================== -->
     <button class="chat-widget-toggle" id="chatToggle" aria-label="Open JLG Assistant" title="Chat with JLG Assistant">💬</button>
 
@@ -2328,12 +2330,13 @@
             <div class="chat-prompts" id="chatPrompts">
                 <button type="button" class="prompt-chip" onclick="handleQuickPrompt('What automation services do you offer?')">🛠️ What services do you offer?</button>
                 <button type="button" class="prompt-chip" onclick="handleQuickPrompt('What is your tech stack & tools?')">⚡ Make, Zapier & AI Stack</button>
-                <button type="button" class="prompt-chip" onclick="handleQuickPrompt('How much are your project rates?')">💰 Pricing & Rates</button>
+                <button type="button" class="prompt-chip" onclick="handleQuickPrompt('Tell me about your background & education')">🎓 Education & Background</button>
+                <button type="button" class="prompt-chip" onclick="handleQuickPrompt('Can I see or download your resume?')">📄 Download Resume / CV</button>
                 <button type="button" class="prompt-chip" onclick="handleQuickPrompt('How can I book a discovery call?')">📅 Book a Discovery Call</button>
             </div>
         </div>
         <form class="chat-input-area" id="chatForm">
-            <input type="text" id="chatInput" placeholder="Ask about services, tools, or rates..." autocomplete="off">
+            <input type="text" id="chatInput" placeholder="Ask about services, tools, resume, or background..." autocomplete="off">
             <button type="submit">Send</button>
         </form>
     </div>
@@ -2590,7 +2593,7 @@
         });
 
         // ==========================================
-        // JLG ASSISTANT (24/7 AI BOT LOGIC & QUICK PROMPTS)
+        // JLG ASSISTANT (RESUME-POWERED AI BOT LOGIC)
         // ==========================================
         const chatToggle = document.getElementById("chatToggle");
         const chatPopup = document.getElementById("chatPopup");
@@ -2626,24 +2629,47 @@
             // Render User Message
             addChatMessage(message, "user");
 
-            // Bot Response Computation
+            // Bot Response Computation (Trained on John's Full Resume)
             setTimeout(() => {
                 const lower = message.toLowerCase();
-                let reply = "Thank you for reaching out! John specializes in designing custom autonomous workflows using Make.com, Zapier, n8n, and Google Gemini AI. Would you like to schedule a discovery meeting?";
+                let reply = "Thank you for reaching out! John specializes in designing custom autonomous workflows using Make.com, Zapier, n8n, and Google Gemini AI. Would you like to download his CV or schedule a call?";
 
-                if (lower.includes("service") || lower.includes("offer") || lower.includes("help") || lower.includes("ano")) {
-                    reply = "John builds practical end-to-end automations: automated client onboarding, AI lead enrichment & outreach, dynamic PDF proposal/contract generators, AI support triage, and custom API webhooks.";
-                } else if (lower.includes("tool") || lower.includes("stack") || lower.includes("make") || lower.includes("zapier") || lower.includes("n8n")) {
-                    reply = "His primary toolkit consists of Make.com, Zapier, n8n, GoHighLevel, Google Workspace APIs, webhooks, and generative AI models (OpenAI & Google Gemini).";
-                } else if (lower.includes("price") || lower.includes("rate") || lower.includes("cost") || lower.includes("magkano") || lower.includes("pricing")) {
-                    reply = "Pricing depends on pipeline complexity (single scenario vs. multi-agent CRM ecosystem). You can send your project details to johnleanardguiriba13@gmail.com for an accurate custom quote!";
-                } else if (lower.includes("contact") || lower.includes("email") || lower.includes("hire") || lower.includes("talk") || lower.includes("book") || lower.includes("call")) {
-                    reply = "You can connect with John directly via email at johnleanardguiriba13@gmail.com or connect through his LinkedIn profile in the contact section below to schedule a call.";
+                // Resume & CV download inquiries
+                if (lower.includes("resume") || lower.includes("cv") || lower.includes("curriculum") || lower.includes("download")) {
+                    reply = "You can download John's official resume directly here: <br><br><a href='resume.pdf' download='John_Leanard_Guiriba_Resume.pdf' style='color: var(--accent-cyan); font-weight:700; text-decoration:underline;'>📄 Download John Leanard's Resume (PDF)</a><br><br>It highlights his background in BS Information Technology, workflow automation (Make, Zapier), and virtual support.";
+                }
+                // Education & School
+                else if (lower.includes("education") || lower.includes("college") || lower.includes("school") || lower.includes("degree") || lower.includes("study") || lower.includes("course") || lower.includes("graduat")) {
+                    reply = "John is currently pursuing a <strong>Bachelor of Science in Information Technology (Major in Web and Game Development)</strong> at <strong>Pamantasan ng Lungsod ng San Pablo</strong> (San Pablo City, Laguna). He is in his 3rd year with an expected graduation in 2028.";
+                }
+                // Location, Address, Phone, Contact
+                else if (lower.includes("location") || lower.includes("where") || lower.includes("address") || lower.includes("taga saan") || lower.includes("phone") || lower.includes("number") || lower.includes("contact") || lower.includes("email")) {
+                    reply = "John is based in <strong>Calauan, Laguna, Philippines</strong>.<br><br>• <strong>Email:</strong> johnleanardguiriba13@gmail.com<br>• <strong>Phone:</strong> +63 977 074 3802<br>• <strong>LinkedIn:</strong> linkedin.com/in/john-leanard-guiriba-35a589404/";
+                }
+                // Availability, Timezone, Shifts (US / PST / EST / Night shift)
+                else if (lower.includes("shift") || lower.includes("night") || lower.includes("pst") || lower.includes("est") || lower.includes("timezone") || lower.includes("time zone") || lower.includes("hour") || lower.includes("schedule")) {
+                    reply = "John has extensive experience coordinating calendars across <strong>PST and EST</strong> time zones. He is fully prepared and flexible to support fast-paced operations during <strong>US / night-shift rotations</strong>.";
+                }
+                // Services & Virtual Assistance
+                else if (lower.includes("service") || lower.includes("offer") || lower.includes("help") || lower.includes("va") || lower.includes("virtual assistant") || lower.includes("ano")) {
+                    reply = "John offers both <strong>AI Workflow Automation</strong> and <strong>General Virtual Support</strong>:<br>• End-to-end Make.com & Zapier pipelines<br>• Lead generation & targeted web research<br>• Executive calendar management & daily itineraries<br>• Client email communication & support<br>• Data entry & Google Sheets / Drive directory organization.";
+                }
+                // Tools & Tech Stack
+                else if (lower.includes("tool") || lower.includes("stack") || lower.includes("software") || lower.includes("make") || lower.includes("zapier") || lower.includes("n8n")) {
+                    reply = "John's core software toolkit includes:<br>• <strong>Automation & AI:</strong> Make.com, Zapier, n8n, ChatGPT, Claude, Google Gemini<br>• <strong>Office & Workspace:</strong> Google Workspace (Sheets, Docs, Drive, Gmail), Microsoft Office (Excel, Word, PowerPoint)<br>• <strong>Collaboration:</strong> Notion, Trello, Slack, Canva.";
+                }
+                // Pricing & Rates
+                else if (lower.includes("price") || lower.includes("rate") || lower.includes("cost") || lower.includes("magkano") || lower.includes("pricing")) {
+                    reply = "Rates depend on the project scope (contract automation pipeline vs. dedicated virtual support). Feel free to email John at <strong>johnleanardguiriba13@gmail.com</strong> or book a discovery call for an accurate custom quote!";
+                }
+                // Booking or hiring
+                else if (lower.includes("hire") || lower.includes("talk") || lower.includes("book") || lower.includes("call") || lower.includes("meeting")) {
+                    reply = "You can schedule a discovery call or send an inquiry directly to <strong>johnleanardguiriba13@gmail.com</strong>. John is ready to discuss how he can streamline your business workflows!";
                 }
 
                 addChatMessage(reply, "bot");
 
-                // Auto Forward to John's Webhook (Zapier Alert Trigger)
+                // Auto Forward to Zapier Alert Trigger
                 notifyJohn(message, reply);
             }, 600);
         }
@@ -2660,8 +2686,7 @@
         // ZAPIER WEBHOOK ALERT FUNCTION
         // ==========================================
         function notifyJohn(clientMsg, botResp) {
-            // ILAGAY DITO SA LOOB NG QUOTES ANG "Catch Hook" URL GALING SA ZAPIER
-            const zapierWebhookURL = ""; 
+            const zapierWebhookURL = ""; // Ilagay dito ang Zapier Catch Hook URL mo kapag handa na
             if (!zapierWebhookURL) return;
 
             fetch(zapierWebhookURL, {
