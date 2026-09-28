@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Jon Leanard Guiriba - AI Automation Specialist Portfolio">
+    <meta name="description" content="John Leanard Guiriba - AI Automation Specialist Portfolio">
     <meta name="author" content="John Leanard B. Guiriba">
     <title>John Leanard Guiriba | AI Automation Specialist</title>
 
@@ -419,94 +419,95 @@
             filter: drop-shadow(0 0 15px rgba(74, 222, 128, 0.4));
         }
 
-       /* Container ng info sa ilalim ng photo card */
-.profile-info {
-    padding: 12px 10px 6px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    overflow: hidden;
-}
+        /* Container ng info sa ilalim ng photo card */
+        .profile-info {
+            padding: 14px 6px 4px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            overflow: hidden;
+        }
 
-.profile-info strong {
-    font-size: 13px;
-    font-weight: 600;
-}
+        .profile-info strong {
+            font-size: 13px;
+            font-weight: 600;
+        }
 
-/* Ticker container na nagtatago sa labis na overflow */
-.ticker-wrapper {
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-    position: relative;
-    mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
-    -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
-}
+        /* Ticker container na nagtatago sa labis na overflow */
+        .ticker-wrapper {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+            -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+        }
 
-/* Ang mismong gumagalaw na track */
-.ticker-track {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    width: max-content;
-    animation: scrollTools 12s linear infinite;
-}
+        /* Ang mismong gumagalaw na track */
+        .ticker-track {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            width: max-content;
+            animation: scrollTools 12s linear infinite;
+        }
 
-/* Hihinto ang takbo kapag itinapat ang mouse cursor */
-.ticker-wrapper:hover .ticker-track {
-    animation-play-state: paused;
-}
+        /* Hihinto ang takbo kapag itinapat ang mouse cursor */
+        .ticker-wrapper:hover .ticker-track {
+            animation-play-state: paused;
+        }
 
-@keyframes scrollTools {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
-}
+        @keyframes scrollTools {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
 
-/* Disenyo ng animated tool pills */
-.tool-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    padding: 3px 8px;
-    border-radius: 6px;
-    font-size: 11px;
-    font-weight: 600;
-    border: 1px solid var(--border);
-    background: rgba(255, 255, 255, 0.04);
-    color: var(--text-main);
-    transition: var(--transition);
-}
+        /* Disenyo ng animated tool pills */
+        .tool-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 600;
+            border: 1px solid var(--border);
+            background: rgba(255, 255, 255, 0.04);
+            color: var(--text-main);
+            transition: var(--transition);
+        }
 
-.tool-pill:hover {
-    transform: translateY(-2px);
-}
+        .tool-pill:hover {
+            transform: translateY(-2px);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
 
-/* Custom logo icon squares na may pulsing glow */
-.tool-ico {
-    display: grid;
-    place-items: center;
-    width: 16px;
-    height: 16px;
-    border-radius: 4px;
-    font-size: 9px;
-    font-weight: 800;
-    color: #fff;
-    animation: iconPulse 2.5s infinite ease-in-out;
-}
+        /* Custom logo icon squares na may pulsing glow */
+        .tool-ico {
+            display: grid;
+            place-items: center;
+            width: 17px;
+            height: 17px;
+            border-radius: 4px;
+            font-size: 9px;
+            font-weight: 800;
+            color: #fff;
+            animation: iconPulse 2.5s infinite ease-in-out;
+        }
 
-.tool-pill.zapier .tool-ico { background: #ff4a00; box-shadow: 0 0 8px rgba(255, 74, 0, 0.6); }
-.tool-pill.make .tool-ico   { background: #6d00cc; box-shadow: 0 0 8px rgba(109, 0, 204, 0.6); }
-.tool-pill.n8n .tool-ico    { background: #ea4b71; font-size: 7px; box-shadow: 0 0 8px rgba(234, 75, 113, 0.6); }
-.tool-pill.ghl .tool-ico    { background: #0ea15a; box-shadow: 0 0 8px rgba(14, 161, 90, 0.6); }
+        .tool-pill.zapier .tool-ico { background: #ff4a00; box-shadow: 0 0 8px rgba(255, 74, 0, 0.6); }
+        .tool-pill.make .tool-ico   { background: #6d00cc; box-shadow: 0 0 8px rgba(109, 0, 204, 0.6); }
+        .tool-pill.n8n .tool-ico    { background: #ea4b71; font-size: 7px; box-shadow: 0 0 8px rgba(234, 75, 113, 0.6); }
+        .tool-pill.ghl .tool-ico    { background: #0ea15a; box-shadow: 0 0 8px rgba(14, 161, 90, 0.6); }
 
-@keyframes iconPulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.15); }
-}
+        @keyframes iconPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+        }
 
         /* SECTION STYLING */
         .section {
@@ -573,6 +574,7 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 14px;
+            align-content: start;
         }
 
         .stat {
@@ -650,13 +652,6 @@
             opacity: 1;
         }
 
-        .skills-grid .skill-card:nth-child(1) { transition-delay: 0s; }
-        .skills-grid .skill-card:nth-child(2) { transition-delay: 0.08s; }
-        .skills-grid .skill-card:nth-child(3) { transition-delay: 0.16s; }
-        .skills-grid .skill-card:nth-child(4) { transition-delay: 0.24s; }
-        .skills-grid .skill-card:nth-child(5) { transition-delay: 0.32s; }
-        .skills-grid .skill-card:nth-child(6) { transition-delay: 0.4s; }
-
         .skill-icon {
             font-size: 26px;
             margin-bottom: 14px;
@@ -714,10 +709,6 @@
         .tool-make .tool-badge-icon { background: #6d00cc; }
         .tool-n8n .tool-badge-icon { background: #ea4b71; font-size: 7px; }
         .tool-ghl .tool-badge-icon { background: #0ea15a; }
-
-        .skill-card:hover .tool-badge {
-            border-color: rgba(255, 255, 255, 0.15);
-        }
 
         .tags span {
             padding: 5px 10px;
@@ -1306,7 +1297,7 @@
                     </p>
 
                     <div class="hero-buttons">
-                        <a href="#projects" class="btn btn-primary">View my work↗</a>
+                        <a href="#projects" class="btn btn-primary">View my work ↗</a>
                         <a href="#contact" class="btn btn-secondary">Let's Talk</a>
                     </div>
                 </div>
@@ -1322,28 +1313,30 @@
                                     <small>Ilagay ang iyong litrato o GIF dito</small>
                                 </div>
                             </div>
-                            <!-- Palitan ito kung may litrato ka na:
-                            <img src="assets/profile.jpg" alt="John Leanard Guiriba">
-                            -->
-                       <div class="profile-info">
-    <strong>Automation Architecture</strong>
-    <div class="ticker-wrapper">
-        <div class="ticker-track">
-            <!-- Unang set ng badges -->
-            <span class="tool-pill zapier"><span class="tool-ico">⚡</span> Zapier</span>
-            <span class="tool-pill make"><span class="tool-ico">M</span> Make</span>
-            <span class="tool-pill n8n"><span class="tool-ico">n8n</span> n8n</span>
-            <span class="tool-pill ghl"><span class="tool-ico">G</span> GoHighLevel</span>
+                        </div>
 
-            <!-- Pangalawang set (kailangan dalawa para tuloy-tuloy at walang patid ang ikot) -->
-            <span class="tool-pill zapier"><span class="tool-ico">⚡</span> Zapier</span>
-            <span class="tool-pill make"><span class="tool-ico">M</span> Make</span>
-            <span class="tool-pill n8n"><span class="tool-ico">n8n</span> n8n</span>
-            <span class="tool-pill ghl"><span class="tool-ico">G</span> GoHighLevel</span>
-        </div>
-    </div>
-</div>
-        </div>
+                        <!-- AUTOMATION TOOLS TICKER ANIMATION -->
+                        <div class="profile-info">
+                            <strong>Automation Architecture</strong>
+                            <div class="ticker-wrapper">
+                                <div class="ticker-track">
+                                    <!-- Unang set ng badges -->
+                                    <span class="tool-pill zapier"><span class="tool-ico">⚡</span> Zapier</span>
+                                    <span class="tool-pill make"><span class="tool-ico">M</span> Make</span>
+                                    <span class="tool-pill n8n"><span class="tool-ico">n8n</span> n8n</span>
+                                    <span class="tool-pill ghl"><span class="tool-ico">G</span> GoHighLevel</span>
+
+                                    <!-- Pangalawang set (seamless infinite loop) -->
+                                    <span class="tool-pill zapier"><span class="tool-ico">⚡</span> Zapier</span>
+                                    <span class="tool-pill make"><span class="tool-ico">M</span> Make</span>
+                                    <span class="tool-pill n8n"><span class="tool-ico">n8n</span> n8n</span>
+                                    <span class="tool-pill ghl"><span class="tool-ico">G</span> GoHighLevel</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- ABOUT -->
@@ -1358,10 +1351,11 @@
                             My goal is simple: turn repetitive manual processes into organized, connected, and intelligent workflows.
                         </p>
                         <p>
-                            I work with n8n, Make.com, Zapier, GoHighLevel, Google Sheets, Google Docs, Notion, (ChatGPT & Gemini), via REST APIs  webhooks to eliminate manual data entry. LLMs and other business tools to create practical automation solutions.
-
-                            Currently pursuing a Bachelor of Science in Information Technology  (Major in Web and Game Development, I combine technical skills, problem-solving, and a strong willingness to learn to build useful automation systems.
-                         </p>
+                            I work with n8n, Make.com, Zapier, GoHighLevel, Google Sheets, Google Docs, Notion, (ChatGPT & Gemini), via REST APIs and webhooks to eliminate manual data entry.
+                        </p>
+                        <p>
+                            Currently pursuing a Bachelor of Science in Information Technology (Major in Web and Game Development), I combine technical skills, problem-solving, and a strong willingness to learn to build useful automation systems.
+                        </p>
                         <div class="about-highlight">
                             <strong>Mission:</strong> Turn complex manual operations into unified, intelligent, and hands-off digital pipelines.
                         </div>
@@ -1408,13 +1402,13 @@
                             <span class="tool-badge tool-n8n"><span class="tool-badge-icon">n8n</span>n8n</span>
                             <span class="tool-badge tool-make"><span class="tool-badge-icon">M</span>Make.com</span>
                             <span class="tool-badge tool-zapier"><span class="tool-badge-icon">⚡</span>Zapier</span>
-                            <span class="tool-badge tool-gohighlevel"><span class="tool-badge-icon">GHL</span>GoHighLevel</span>
+                            <span class="tool-badge tool-ghl"><span class="tool-badge-icon">G</span>GoHighLevel</span>
                             <span>ChatGPT</span>
                             <span>Google Gemini</span>
                             <span>Claude</span>
-                            <span>Deepsek</span>
+                            <span>DeepSeek</span>
                             <span>AI Agents</span>
-                            <span>Ai Workflows</span>
+                            <span>AI Workflows</span>
                             <span>Voiceflow</span>
                             <span>Prompt Engineering</span>
                         </div>
@@ -1456,7 +1450,6 @@
                             <span>Google Workspace</span>
                             <span>Airtable</span>
                             <span>Notion</span>
-                           
                         </div>
                     </div>
 
@@ -1468,7 +1461,7 @@
                             <span>CSS</span>
                             <span>JavaScript</span>
                             <span>PHP</span>
-                            <span>Csharp</span>
+                            <span>C#</span>
                             <span>JSON</span>
                         </div>
                     </div>
@@ -1536,7 +1529,7 @@
             <div class="container">
                 <div class="projects-header">
                     <div>
-        <span class="section-label">Selected work</span>
+                        <span class="section-label">Selected work</span>
                         <h2 class="section-title reveal">Automated systems & workflows.</h2>
                     </div>
                     <p class="section-subtitle reveal">Click any project card to review complete automation architecture details.</p>
@@ -1553,20 +1546,20 @@
                             </div>
                         </div>
                         <div class="project-body">
-                        <div class="project-top">
-                            <span class="project-type">EMAIL AUTOMATION</span>
-                            <span class="project-number">01</span>
-                        </div>
-                        <h3>Inbound Gmail Automated Responder</h3>
-                        <p>Processes incoming inbox queries, extracts key intent, and delivers context-aware automated answers.</p>
-                        <div class="project-bottom">
-                            <div class="project-tools">
-                                <span>Zapier</span>
-                                <span>Gmail</span>
+                            <div class="project-top">
+                                <span class="project-type">EMAIL AUTOMATION</span>
+                                <span class="project-number">01</span>
                             </div>
-                            <span class="view-project">Details →</span>
+                            <h3>Inbound Gmail Automated Responder</h3>
+                            <p>Processes incoming inbox queries, extracts key intent, and delivers context-aware automated answers.</p>
+                            <div class="project-bottom">
+                                <div class="project-tools">
+                                    <span>Zapier</span>
+                                    <span>Gmail</span>
+                                </div>
+                                <span class="view-project">Details →</span>
+                            </div>
                         </div>
-                    </div>
                     </article>
 
                     <!-- PROJECT 2 -->
@@ -1579,21 +1572,21 @@
                             </div>
                         </div>
                         <div class="project-body">
-                        <div class="project-top">
-                            <span class="project-type">CRM PIPELINE</span>
-                            <span class="project-number">02</span>
-                        </div>
-                        <h3>Real-Time Lead Tracking System</h3>
-                        <p>Instantly records submissions from client forms and synchronizes lead records straight into Google Sheets.</p>
-                        <div class="project-bottom">
-                            <div class="project-tools">
-                                <span>Zapier</span>
-                                <span>Forms</span>
-                                <span>Sheets</span>
+                            <div class="project-top">
+                                <span class="project-type">CRM PIPELINE</span>
+                                <span class="project-number">02</span>
                             </div>
-                            <span class="view-project">Details →</span>
+                            <h3>Real-Time Lead Tracking System</h3>
+                            <p>Instantly records submissions from client forms and synchronizes lead records straight into Google Sheets.</p>
+                            <div class="project-bottom">
+                                <div class="project-tools">
+                                    <span>Zapier</span>
+                                    <span>Forms</span>
+                                    <span>Sheets</span>
+                                </div>
+                                <span class="view-project">Details →</span>
+                            </div>
                         </div>
-                    </div>
                     </article>
 
                     <!-- PROJECT 3 -->
@@ -1606,20 +1599,20 @@
                             </div>
                         </div>
                         <div class="project-body">
-                        <div class="project-top">
-                            <span class="project-type">SCHEDULING</span>
-                            <span class="project-number">03</span>
-                        </div>
-                        <h3>Discovery Call Auto-Booking</h3>
-                        <p>Streamlines calendar appointment bookings by managing time slots and triggering calendar notifications.</p>
-                        <div class="project-bottom">
-                            <div class="project-tools">
-                                <span>Zapier</span>
-                                <span>Calendar</span>
+                            <div class="project-top">
+                                <span class="project-type">SCHEDULING</span>
+                                <span class="project-number">03</span>
                             </div>
-                            <span class="view-project">Details →</span>
+                            <h3>Discovery Call Auto-Booking</h3>
+                            <p>Streamlines calendar appointment bookings by managing time slots and triggering calendar notifications.</p>
+                            <div class="project-bottom">
+                                <div class="project-tools">
+                                    <span>Zapier</span>
+                                    <span>Calendar</span>
+                                </div>
+                                <span class="view-project">Details →</span>
+                            </div>
                         </div>
-                    </div>
                     </article>
 
                     <!-- PROJECT 4 -->
@@ -1632,20 +1625,20 @@
                             </div>
                         </div>
                         <div class="project-body">
-                        <div class="project-top">
-                            <span class="project-type">PROJECT MANAGEMENT</span>
-                            <span class="project-number">04</span>
-                        </div>
-                        <h3>Production Task Delegation</h3>
-                        <p>Dispatches incoming client onboarding information into organized project management cards on Trello.</p>
-                        <div class="project-bottom">
-                            <div class="project-tools">
-                                <span>Zapier</span>
-                                <span>Trello</span>
+                            <div class="project-top">
+                                <span class="project-type">PROJECT MANAGEMENT</span>
+                                <span class="project-number">04</span>
                             </div>
-                            <span class="view-project">Details →</span>
+                            <h3>Production Task Delegation</h3>
+                            <p>Dispatches incoming client onboarding information into organized project management cards on Trello.</p>
+                            <div class="project-bottom">
+                                <div class="project-tools">
+                                    <span>Zapier</span>
+                                    <span>Trello</span>
+                                </div>
+                                <span class="view-project">Details →</span>
+                            </div>
                         </div>
-                    </div>
                     </article>
 
                     <!-- PROJECT 5 -->
@@ -1658,20 +1651,20 @@
                             </div>
                         </div>
                         <div class="project-body">
-                        <div class="project-top">
-                            <span class="project-type">CONVERSATIONAL AI</span>
-                            <span class="project-number">05</span>
-                        </div>
-                        <h3>24/7 Agency Inbound Support Bot</h3>
-                        <p>Handles initial customer queries around the clock using OpenAI models to provide consistent answers.</p>
-                        <div class="project-bottom">
-                            <div class="project-tools">
-                                <span>OpenAI</span>
-                                <span>Zapier AI</span>
+                            <div class="project-top">
+                                <span class="project-type">CONVERSATIONAL AI</span>
+                                <span class="project-number">05</span>
                             </div>
-                            <span class="view-project">Details →</span>
+                            <h3>24/7 Agency Inbound Support Bot</h3>
+                            <p>Handles initial customer queries around the clock using OpenAI models to provide consistent answers.</p>
+                            <div class="project-bottom">
+                                <div class="project-tools">
+                                    <span>OpenAI</span>
+                                    <span>Zapier AI</span>
+                                </div>
+                                <span class="view-project">Details →</span>
+                            </div>
                         </div>
-                    </div>
                     </article>
 
                     <!-- PROJECT 6 -->
@@ -1684,20 +1677,20 @@
                             </div>
                         </div>
                         <div class="project-body">
-                        <div class="project-top">
-                            <span class="project-type">AI AGENTS</span>
-                            <span class="project-number">06</span>
-                        </div>
-                        <h3>Client Intake & Qualification Bot</h3>
-                        <p>Qualifies leads through dynamic questions, scoring prospects before handing them to human account reps.</p>
-                        <div class="project-bottom">
-                            <div class="project-tools">
-                                <span>Gemini</span>
-                                <span>OpenAI</span>
+                            <div class="project-top">
+                                <span class="project-type">AI AGENTS</span>
+                                <span class="project-number">06</span>
                             </div>
-                            <span class="view-project">Details →</span>
+                            <h3>Client Intake & Qualification Bot</h3>
+                            <p>Qualifies leads through dynamic questions, scoring prospects before handing them to human account reps.</p>
+                            <div class="project-bottom">
+                                <div class="project-tools">
+                                    <span>Gemini</span>
+                                    <span>OpenAI</span>
+                                </div>
+                                <span class="view-project">Details →</span>
+                            </div>
                         </div>
-                    </div>
                     </article>
                 </div>
 
