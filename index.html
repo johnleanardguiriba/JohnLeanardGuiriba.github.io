@@ -467,7 +467,6 @@
             filter: drop-shadow(0 0 15px rgba(74, 222, 128, 0.4));
         }
 
-        /* Container ng info sa ilalim ng photo card */
         .profile-info {
             padding: 14px 6px 4px;
             display: flex;
@@ -604,7 +603,6 @@
             margin-bottom: 18px;
         }
 
-        /* Mission & Vision Styling */
         .mission-vision-grid {
             display: flex;
             flex-direction: column;
@@ -872,7 +870,6 @@
             margin-bottom: 30px;
         }
 
-        /* Category Filter Buttons */
         .project-filters {
             display: flex;
             flex-wrap: wrap;
@@ -929,7 +926,7 @@
         }
 
         .project.hide {
-            display: none;
+            display: none !important;
         }
 
         .project:hover {
@@ -1012,21 +1009,21 @@
 
         .project h3 {
             font-family: "Space Grotesk", sans-serif;
-            font-size: 17px;
+            font-size: 16px;
             line-height: 1.4;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             font-weight: 600;
         }
 
         .project p {
             color: var(--text-muted);
-            font-size: 13px;
-            line-height: 1.65;
+            font-size: 12.5px;
+            line-height: 1.6;
         }
 
         .project-bottom {
             margin-top: auto;
-            padding-top: 20px;
+            padding-top: 18px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -1191,7 +1188,9 @@
         }
 
         .modal-content {
-            width: min(580px, 100%);
+            width: min(640px, 100%);
+            max-height: 88vh;
+            overflow-y: auto;
             border: 1px solid var(--border-hover);
             border-radius: var(--radius-md);
             background: var(--modal-bg);
@@ -1246,21 +1245,43 @@
 
         .modal-content h2 {
             font-family: "Space Grotesk", sans-serif;
-            font-size: 24px;
-            margin: 12px 0;
+            font-size: 22px;
+            margin: 10px 0 14px;
+        }
+
+        .modal-architecture {
+            padding: 12px 14px;
+            background: rgba(34, 197, 94, 0.08);
+            border: 1px solid rgba(34, 197, 94, 0.25);
+            border-radius: var(--radius-sm);
+            font-size: 12px;
+            color: var(--accent-emerald);
+            margin-bottom: 16px;
+            font-family: monospace;
+            word-break: break-word;
         }
 
         .modal-content p {
             color: var(--text-muted);
-            font-size: 13px;
+            font-size: 13.5px;
             line-height: 1.8;
+            margin-bottom: 14px;
+        }
+
+        .modal-impact {
+            padding: 14px;
+            border-left: 2px solid var(--accent-cyan);
+            background: rgba(74, 222, 128, 0.06);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            font-size: 13px;
+            margin-bottom: 18px;
+            color: var(--text-main);
         }
 
         .modal-stack {
             display: flex;
             flex-wrap: wrap;
             gap: 6px;
-            margin-top: 22px;
         }
 
         .modal-stack span {
@@ -1478,7 +1499,7 @@
                         <!-- MISSION & VISION -->
                         <div class="mission-vision-grid">
                             <div class="about-highlight">
-                                <strong>Mission:</strong> Turn complex manual operations into unified, intelligent, and hands-off digital pipelines.
+                                <strong>Mission:</strong> Turn complex manual operations into unified, intelligent, and hands off digital pipelines.
                             </div>
                             <div class="about-highlight vision">
                                 <strong>Vision:</strong> Empower businesses to scale effortlessly through seamless, reliable, and autonomous AI-driven workflows.
@@ -1649,7 +1670,9 @@
             </div>
         </section>
 
-        <!-- PROJECTS SECTION -->
+        <!-- ===================================================
+             PROJECTS SECTION (SEPARATED BY TOOLS)
+        =================================================== -->
         <section id="projects" class="section">
             <div class="container">
                 <div class="projects-header">
@@ -1663,26 +1686,197 @@
                 <!-- CATEGORY / TOOL FILTER BUTTONS -->
                 <div class="project-filters reveal">
                     <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="make">🟣 Make.com (6)</button>
                     <button class="filter-btn" data-filter="zapier">⚡ Zapier</button>
-                    <button class="filter-btn" data-filter="make">🟣 Make.com</button>
                     <button class="filter-btn" data-filter="ai-agents">🤖 AI Agents</button>
                 </div>
 
                 <!-- PROJECT CARDS -->
                 <div class="project-grid">
-                    <!-- PROJECT 1 (Zapier) -->
-                    <article class="project reveal" data-category="zapier" data-project="0">
+
+                    <!-- ================= MAKE.COM PROJECTS (NEW) ================= -->
+                    <!-- MAKE 1 -->
+                    <article class="project reveal" data-category="make" data-project="0">
+                        <div class="project-image">
+                            <img src="assets/project-make-1.jpg" alt="Make Project 1 screenshot" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="project-image-placeholder">
+                                <span>📁</span>
+                                <small>Onboarding & Directory Engine</small>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-top">
+                                <span class="project-type">MAKE.COM • ONBOARDING</span>
+                                <span class="project-number">M-01</span>
+                            </div>
+                            <h3>Client Onboarding & Directory Provisioning</h3>
+                            <p>Watches client intake, provisions customized Google Drive client folders, and dispatches automated provisioning alerts via Gmail.</p>
+                            <div class="project-bottom">
+                                <div class="project-tools">
+                                    <span>Make.com</span>
+                                    <span>Drive</span>
+                                    <span>Sheets</span>
+                                    <span>Gmail</span>
+                                </div>
+                                <span class="view-project">Details →</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- MAKE 2 -->
+                    <article class="project reveal" data-category="make" data-project="1">
+                        <div class="project-image">
+                            <img src="assets/project-make-2.jpg" alt="Make Project 2 screenshot" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="project-image-placeholder">
+                                <span>⚡</span>
+                                <small>Lead Enrichment Engine</small>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-top">
+                                <span class="project-type">MAKE.COM • AI OUTREACH</span>
+                                <span class="project-number">M-02</span>
+                            </div>
+                            <h3>AI Lead Enrichment & Contextual Outreach</h3>
+                            <p>Enriches inbound prospect rows with Google Gemini AI to draft context-aware personalized cold emails into Gmail in under 5s.</p>
+                            <div class="project-bottom">
+                                <div class="project-tools">
+                                    <span>Make.com</span>
+                                    <span>Gemini AI</span>
+                                    <span>Gmail</span>
+                                    <span>Sheets</span>
+                                </div>
+                                <span class="view-project">Details →</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- MAKE 3 -->
+                    <article class="project reveal" data-category="make" data-project="2">
+                        <div class="project-image">
+                            <img src="assets/project-make-3.jpg" alt="Make Project 3 screenshot" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="project-image-placeholder">
+                                <span>📄</span>
+                                <small>Dynamic PDF Generator</small>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-top">
+                                <span class="project-type">MAKE.COM • DOC AUTOMATION</span>
+                                <span class="project-number">M-03</span>
+                            </div>
+                            <h3>Dynamic Contract & Proposal PDF Generator</h3>
+                            <p>Generates pixel-perfect branded contracts from Google Docs templates upon closed deal trigger and emails PDF attachments automatically.</p>
+                            <div class="project-bottom">
+                                <div class="project-tools">
+                                    <span>Make.com</span>
+                                    <span>Google Docs</span>
+                                    <span>Drive</span>
+                                    <span>Gmail</span>
+                                </div>
+                                <span class="view-project">Details →</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- MAKE 4 -->
+                    <article class="project reveal" data-category="make" data-project="3">
+                        <div class="project-image">
+                            <img src="assets/project-make-4.jpg" alt="Make Project 4 screenshot" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="project-image-placeholder">
+                                <span>🚨</span>
+                                <small>Support Triage Engine</small>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-top">
+                                <span class="project-type">MAKE.COM • AI TRIAGE</span>
+                                <span class="project-number">M-04</span>
+                            </div>
+                            <h3>AI Customer Support Triage & Escalation</h3>
+                            <p>Classifies incoming support ticket urgency and sentiment with Gemini AI, auto-routing Sev-1 critical incidents to engineering logs.</p>
+                            <div class="project-bottom">
+                                <div class="project-tools">
+                                    <span>Make.com</span>
+                                    <span>Gemini AI</span>
+                                    <span>Router</span>
+                                    <span>Sheets</span>
+                                </div>
+                                <span class="view-project">Details →</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- MAKE 5 -->
+                    <article class="project reveal" data-category="make" data-project="4">
+                        <div class="project-image">
+                            <img src="assets/project-make-5.jpg" alt="Make Project 5 screenshot" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="project-image-placeholder">
+                                <span>🎯</span>
+                                <small>Lead Scoring Engine</small>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-top">
+                                <span class="project-type">MAKE.COM • CRM SCORING</span>
+                                <span class="project-number">M-05</span>
+                            </div>
+                            <h3>AI Inbound Lead Qualification & CRM Scoring</h3>
+                            <p>Analyzes ICP match, budget, and summary with AI; splits high-ticket prospects into VIP Sales Pipeline vs. Nurture list via smart routers.</p>
+                            <div class="project-bottom">
+                                <div class="project-tools">
+                                    <span>Make.com</span>
+                                    <span>Gemini AI</span>
+                                    <span>Router</span>
+                                    <span>Sheets</span>
+                                </div>
+                                <span class="view-project">Details →</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- MAKE 6 -->
+                    <article class="project reveal" data-category="make" data-project="5">
+                        <div class="project-image">
+                            <img src="assets/project-make-6.jpg" alt="Make Project 6 screenshot" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="project-image-placeholder">
+                                <span>🎬</span>
+                                <small>Viral Script Engine</small>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-top">
+                                <span class="project-type">MAKE.COM • CONTENT AI</span>
+                                <span class="project-number">M-06</span>
+                            </div>
+                            <h3>Autonomous Content Repurposing & Viral Script</h3>
+                            <p>Synthesizes 3 viral hooks, 60s video scripts, visual cues, and SEO tags from raw topic ideas, directly routing to recording ledgers.</p>
+                            <div class="project-bottom">
+                                <div class="project-tools">
+                                    <span>Make.com</span>
+                                    <span>Gemini AI</span>
+                                    <span>Router</span>
+                                    <span>Sheets</span>
+                                </div>
+                                <span class="view-project">Details →</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- ================= ZAPIER & AI AGENTS PROJECTS ================= -->
+                    <!-- ZAPIER 1 -->
+                    <article class="project reveal" data-category="zapier" data-project="6">
                         <div class="project-image">
                             <img src="assets/project-1.jpg" alt="Project 1 screenshot" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                             <div class="project-image-placeholder">
-                                <span>🖼️</span>
-                                <small>Ilagay ang larawan ng project dito (assets/project-1.jpg)</small>
+                                <span>✉️</span>
+                                <small>Inbound Responder</small>
                             </div>
                         </div>
                         <div class="project-body">
                             <div class="project-top">
                                 <span class="project-type">EMAIL AUTOMATION</span>
-                                <span class="project-number">01</span>
+                                <span class="project-number">Z-01</span>
                             </div>
                             <h3>Inbound Gmail Automated Responder</h3>
                             <p>Processes incoming inbox queries, extracts key intent, and delivers context-aware automated answers.</p>
@@ -1696,19 +1890,19 @@
                         </div>
                     </article>
 
-                    <!-- PROJECT 2 (Zapier) -->
-                    <article class="project reveal" data-category="zapier" data-project="1">
+                    <!-- ZAPIER 2 -->
+                    <article class="project reveal" data-category="zapier" data-project="7">
                         <div class="project-image">
                             <img src="assets/project-2.jpg" alt="Project 2 screenshot" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                             <div class="project-image-placeholder">
-                                <span>🖼️</span>
-                                <small>Ilagay ang larawan ng project dito (assets/project-2.jpg)</small>
+                                <span>📊</span>
+                                <small>Lead Tracker</small>
                             </div>
                         </div>
                         <div class="project-body">
                             <div class="project-top">
                                 <span class="project-type">CRM PIPELINE</span>
-                                <span class="project-number">02</span>
+                                <span class="project-number">Z-02</span>
                             </div>
                             <h3>Real-Time Lead Tracking System</h3>
                             <p>Instantly records submissions from client forms and synchronizes lead records straight into Google Sheets.</p>
@@ -1723,19 +1917,19 @@
                         </div>
                     </article>
 
-                    <!-- PROJECT 3 (Zapier) -->
-                    <article class="project reveal" data-category="zapier" data-project="2">
+                    <!-- ZAPIER 3 -->
+                    <article class="project reveal" data-category="zapier" data-project="8">
                         <div class="project-image">
                             <img src="assets/project-3.jpg" alt="Project 3 screenshot" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                             <div class="project-image-placeholder">
-                                <span>🖼️</span>
-                                <small>Ilagay ang larawan ng project dito (assets/project-3.jpg)</small>
+                                <span>📅</span>
+                                <small>Auto Booking</small>
                             </div>
                         </div>
                         <div class="project-body">
                             <div class="project-top">
                                 <span class="project-type">SCHEDULING</span>
-                                <span class="project-number">03</span>
+                                <span class="project-number">Z-03</span>
                             </div>
                             <h3>Discovery Call Auto-Booking</h3>
                             <p>Streamlines calendar appointment bookings by managing time slots and triggering calendar notifications.</p>
@@ -1749,49 +1943,22 @@
                         </div>
                     </article>
 
-                    <!-- PROJECT 4 (Make.com) -->
-                    <article class="project reveal" data-category="make" data-project="3">
-                        <div class="project-image">
-                            <img src="assets/project-4.jpg" alt="Project 4 screenshot" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                            <div class="project-image-placeholder">
-                                <span>🖼️</span>
-                                <small>Ilagay ang larawan ng project dito (assets/project-4.jpg)</small>
-                            </div>
-                        </div>
-                        <div class="project-body">
-                            <div class="project-top">
-                                <span class="project-type">WORKFLOW AUTOMATION</span>
-                                <span class="project-number">04</span>
-                            </div>
-                            <h3>Production Task Delegation & Sync</h3>
-                            <p>Multi-step Make.com scenario dispatching onboarding data into organized Trello boards and Slack notices.</p>
-                            <div class="project-bottom">
-                                <div class="project-tools">
-                                    <span>Make.com</span>
-                                    <span>Trello</span>
-                                    <span>Webhooks</span>
-                                </div>
-                                <span class="view-project">Details →</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- PROJECT 5 (AI Agents) -->
-                    <article class="project reveal" data-category="ai-agents" data-project="4">
+                    <!-- AI AGENTS 1 -->
+                    <article class="project reveal" data-category="ai-agents" data-project="9">
                         <div class="project-image">
                             <img src="assets/project-5.jpg" alt="Project 5 screenshot" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                             <div class="project-image-placeholder">
-                                <span>🖼️</span>
-                                <small>Ilagay ang larawan ng project dito (assets/project-5.jpg)</small>
+                                <span>🤖</span>
+                                <small>Support Bot</small>
                             </div>
                         </div>
                         <div class="project-body">
                             <div class="project-top">
                                 <span class="project-type">CONVERSATIONAL AI</span>
-                                <span class="project-number">05</span>
+                                <span class="project-number">AI-01</span>
                             </div>
                             <h3>24/7 Agency Inbound Support Bot</h3>
-                            <p>Handles initial customer queries around the clock using OpenAI models to provide consistent answers.</p>
+                            <p>Handles customer queries around the clock using OpenAI models to provide consistent answers.</p>
                             <div class="project-bottom">
                                 <div class="project-tools">
                                     <span>OpenAI</span>
@@ -1802,22 +1969,22 @@
                         </div>
                     </article>
 
-                    <!-- PROJECT 6 (AI Agents) -->
-                    <article class="project reveal" data-category="ai-agents" data-project="5">
+                    <!-- AI AGENTS 2 -->
+                    <article class="project reveal" data-category="ai-agents" data-project="10">
                         <div class="project-image">
                             <img src="assets/project-6.jpg" alt="Project 6 screenshot" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                             <div class="project-image-placeholder">
-                                <span>🖼️</span>
-                                <small>Ilagay ang larawan ng project dito (assets/project-6.jpg)</small>
+                                <span>🧠</span>
+                                <small>Qualification Bot</small>
                             </div>
                         </div>
                         <div class="project-body">
                             <div class="project-top">
                                 <span class="project-type">AI AGENTS</span>
-                                <span class="project-number">06</span>
+                                <span class="project-number">AI-02</span>
                             </div>
                             <h3>Client Intake & Qualification Bot</h3>
-                            <p>Qualifies leads through dynamic questions, scoring prospects before handing them to human account reps.</p>
+                            <p>Qualifies leads through dynamic questions, scoring prospects before handing them to human sales reps.</p>
                             <div class="project-bottom">
                                 <div class="project-tools">
                                     <span>Gemini</span>
@@ -1827,6 +1994,7 @@
                             </div>
                         </div>
                     </article>
+
                 </div>
 
                 <!-- CTA -->
@@ -1892,7 +2060,9 @@
             </div>
             <span class="section-label" id="modalType">PROJECT</span>
             <h2 id="modalTitle">Project Title</h2>
+            <div class="modal-architecture" id="modalArch"></div>
             <p id="modalDescription">Description goes here.</p>
+            <div class="modal-impact" id="modalImpact"></div>
             <div class="modal-stack" id="modalStack"></div>
         </div>
     </div>
@@ -1905,7 +2075,6 @@
         const themeToggle = document.getElementById("themeToggle");
         const root = document.documentElement;
 
-        // I-check kung may naka-save na preference
         const savedTheme = localStorage.getItem("preferred-theme") || "dark";
         root.setAttribute("data-theme", savedTheme);
         themeToggle.textContent = savedTheme === "light" ? "☀️" : "🌙";
@@ -1920,14 +2089,13 @@
         });
 
         // ==========================================
-        // PROJECT CATEGORY FILTER (ZAPIER / MAKE / AI)
+        // PROJECT CATEGORY FILTER (ALL / MAKE / ZAPIER / AI)
         // ==========================================
         const filterBtns = document.querySelectorAll(".filter-btn");
         const projectCards = document.querySelectorAll(".project");
 
         filterBtns.forEach(btn => {
             btn.addEventListener("click", () => {
-                // Tanggalin ang active sa lahat ng button
                 filterBtns.forEach(b => b.classList.remove("active"));
                 btn.classList.add("active");
 
@@ -1982,47 +2150,117 @@
 
         document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
 
-        // Projects Data
+        // ==========================================
+        // COMPREHENSIVE PROJECTS DATA (MAKE + ZAPIER + AI)
+        // ==========================================
         const projects = [
+            // 0: Make Project 1
+            {
+                type: "MAKE.COM WORKFLOW",
+                title: "Automated Client Onboarding & Directory Provisioning Engine",
+                architecture: "Google Sheets (Watch Rows) ➔ Google Drive (Create Dynamic Folder) ➔ Gmail (Dispatch Provisioning Alert)",
+                description: "An automated provisioning engine that monitors incoming client intake submissions, dynamically creates organized client folders with granular permissions, and sends customized delivery confirmations.",
+                impact: "Business Impact: Tinanggal ang manual work sa paggawa ng client folders at pagkopya ng links papuntang email; nabawasan ang onboarding delivery time mula 15–30 minuto patungong sub-10 seconds pagkapasok ng client intake.",
+                tools: ["Make.com", "Google Sheets", "Google Drive", "Gmail"],
+                image: "assets/project-make-1.jpg"
+            },
+            // 1: Make Project 2
+            {
+                type: "MAKE.COM + AI AGENT",
+                title: "AI-Powered Lead Enrichment & Contextual Outreach Engine",
+                architecture: "Google Sheets (Watch New Rows) ➔ Google Gemini AI (Generate Response) ➔ Google Sheets (Update a Row) ➔ Gmail (Create a Draft)",
+                description: "Extracts prospect information upon lead capture, feeds context to Google Gemini to formulate tailored outreach copy, updates company ledgers, and generates ready-to-review Gmail drafts.",
+                impact: "Business Impact: Tinanggal ang 10–15 minutong manual research at copywriting para sa bawat prospect; awtomatikong lumilikha ng highly personalized cold outreach drafts sa loob ng <5s habang pinapanatili ang human review bago magpadala.",
+                tools: ["Make.com", "Google Gemini AI", "Google Sheets", "Gmail"],
+                image: "assets/project-make-2.jpg"
+            },
+            // 2: Make Project 3
+            {
+                type: "MAKE.COM AUTOMATION",
+                title: "Dynamic Contract & Proposal PDF Generator Engine",
+                architecture: "Google Sheets (New Closed Deal) ➔ Google Docs (Create Doc with Placeholders) ➔ Google Drive (Export to PDF) ➔ Gmail (Dispatch Attachment)",
+                description: "Automatically compiles closed deal metrics into standardized legal templates, populates dynamic client tags, converts agreements to high-resolution PDFs, and emails sign-off attachments.",
+                impact: "Business Impact: Inaalis ang manual copy-pasting ng mga presyo at kontrata sa Word/Docs; awtomatikong lumilikha ng pixel-perfect branded PDF proposal at nagpapadala sa loob ng 10 segundo.",
+                tools: ["Make.com", "Google Docs", "Google Drive", "Gmail", "PDF Engine"],
+                image: "assets/project-make-3.jpg"
+            },
+            // 3: Make Project 4
+            {
+                type: "MAKE.COM + AI TRIAGE",
+                title: "AI Customer Support Triage & Multi-Tier Escalation Engine",
+                architecture: "Google Sheets (New Tickets) ➔ Google Gemini AI (Sentiment & Urgency) ➔ Google Sheets (Update Triage) ➔ Flow Control Router ➔ Google Sheets (Critical Incidents Audit Tab)",
+                description: "An automated multi-tier support incident dispatcher. Leverages Gemini AI to evaluate urgency and customer tone, routing high-priority (P0/Sev-1) operational tickets to on-call engineering tabs instantly.",
+                impact: "Business Impact: Inaalis ang manual na pagbabasa at pag-uri ng mga support ticket tuwing may service outage; awtomatikong sinusuri ang urgency gamit ang AI at inihihiwalay ang critical tickets sa loob ng <5s.",
+                tools: ["Make.com", "Google Gemini AI", "Router", "Google Sheets"],
+                image: "assets/project-make-4.jpg"
+            },
+            // 4: Make Project 5
+            {
+                type: "MAKE.COM + AI CRM",
+                title: "AI Inbound Lead Qualification & CRM Scoring Engine",
+                architecture: "Google Sheets (New Leads) ➔ Google Gemini AI (ICP Evaluation & Budget Scoring) ➔ Google Sheets (Update Record) ➔ Flow Control Router ➔ VIP Sales vs. Nurture Pipeline",
+                description: "Scores inbound form submissions against ideal customer profiles (ICP). Analyzes budget fit and assigns priority tags, instantly splitting high-value accounts into VIP hot-lead queues.",
+                impact: "Business Impact: Inaalis ang manual vetting sa daan-daang leads araw-araw; awtomatikong sinusuri ng AI ang budget at company profile para ma-prioritize ang high-ticket deals sa sales team sa loob ng 5 segundo.",
+                tools: ["Make.com", "Google Gemini AI", "Flow Router", "CRM"],
+                image: "assets/project-make-5.jpg"
+            },
+            // 5: Make Project 6
+            {
+                type: "MAKE.COM + GENERATIVE AI",
+                title: "Autonomous Multi-Platform Content Repurposing & Viral Script Engine",
+                architecture: "Google Sheets (Idea Intake) ➔ Google Gemini AI (3 Viral Hooks, 60s Script, Visual Cues, Hashtags) ➔ Google Sheets (Ledger Update) ➔ Router ➔ Ready to Record Pipeline",
+                description: "Turns raw video ideas into comprehensive production assets. Gemini generates hooks, scene breakdowns, teleprompter scripts, and SEO metadata, transferring ready briefs directly into filming pipelines.",
+                impact: "Business Impact: Binabawasan ng 90% ang oras sa brainstorming at pre-production; awtomatikong ginagawang 3 viral hooks, full script, at metadata ang isang raw idea sa loob ng 10s para sa tuloy-tuloy na content output.",
+                tools: ["Make.com", "Google Gemini AI", "Content Engine", "Google Sheets"],
+                image: "assets/project-make-6.jpg"
+            },
+            // 6: Zapier Project 1
             {
                 type: "EMAIL AUTOMATION",
                 title: "Inbound Gmail Automated Responder",
+                architecture: "Gmail (Incoming Message) ➔ Zapier Parser ➔ Gmail (Context-Aware Reply)",
                 description: "An automated workflow designed to process incoming Gmail messages, categorize context, and trigger instant structured responses to eliminate inbox congestion.",
+                impact: "Business Impact: Instant reply sa customer inquiries 24/7; tinanggal ang inbox clutter at manual follow-ups.",
                 tools: ["Zapier", "Gmail", "Automation"],
                 image: "assets/project-1.jpg"
             },
+            // 7: Zapier Project 2
             {
                 type: "CRM PIPELINE",
                 title: "Real-Time Lead Tracking CRM Pipeline",
+                architecture: "Google Forms ➔ Zapier Formatter ➔ Google Sheets & CRM Sync",
                 description: "A data pipeline workflow that captures lead form submissions in real time, standardizes fields, and logs them accurately into Google Sheets and CRM software.",
+                impact: "Business Impact: Zero percent lead leakage; zero human errors sa manual copy-pasting ng contact numbers at emails.",
                 tools: ["Zapier", "Google Forms", "Google Sheets", "CRM"],
                 image: "assets/project-2.jpg"
             },
+            // 8: Zapier Project 3
             {
-                type: "SCHEDULING",
+                type: "SCHEDULING AUTOMATION",
                 title: "Discovery Call Auto-Booking & Calendar Sync",
+                architecture: "Booking Form ➔ Zapier Check Availability ➔ Google Calendar Invite Dispatch",
                 description: "A friction-free appointment scheduling system that checks availability, books meetings directly on Google Calendar, and delivers automated calendar invites.",
+                impact: "Business Impact: Tinanggal ang pabalik-balik na email para magtanong ng availability; seamless auto-booking para sa clients.",
                 tools: ["Zapier", "Google Forms", "Google Calendar"],
                 image: "assets/project-3.jpg"
             },
-            {
-                type: "WORKFLOW AUTOMATION",
-                title: "Production Task Delegation & Sync",
-                description: "An onboarding pipeline in Make.com that ingests new client questionnaires and automatically routes tasks to Trello while notifying team members on Slack.",
-                tools: ["Make.com", "Trello", "Slack", "Webhooks"],
-                image: "assets/project-4.jpg"
-            },
+            // 9: AI Agent 1
             {
                 type: "CONVERSATIONAL AI",
                 title: "24/7 Agency Inbound Support Bot",
+                architecture: "Webchat Webhook ➔ OpenAI GPT-4 Engine ➔ Zapier AI Actions ➔ CRM Ticket Dispatch",
                 description: "A customer support AI agent powered by OpenAI to triage frequently asked questions, collect contact info, and route complex tickets to humans.",
+                impact: "Business Impact: 70% ng first-level inquiries nasasagot nang kusa nang walang human agent intervention.",
                 tools: ["OpenAI", "Zapier AI", "Google Gemini"],
                 image: "assets/project-5.jpg"
             },
+            // 10: AI Agent 2
             {
-                type: "AI AGENTS",
+                type: "AI LEAD QUALIFIER",
                 title: "Client Intake & Qualification Bot",
+                architecture: "Inbound Prospect Flow ➔ Gemini / OpenAI Prompt Matrix ➔ Structured Lead Rating",
                 description: "A multi-step conversational agent that qualifies inbound prospects based on budget and requirements before directing high-value leads to sales reps.",
+                impact: "Business Impact: Sinisala ang unqualified prospects bago pa man umabot sa calendar ng closer o sales rep.",
                 tools: ["Gemini", "OpenAI", "Zapier AI"],
                 image: "assets/project-6.jpg"
             }
@@ -2033,7 +2271,9 @@
         const modalClose = document.getElementById("modalClose");
         const modalType = document.getElementById("modalType");
         const modalTitle = document.getElementById("modalTitle");
+        const modalArch = document.getElementById("modalArch");
         const modalDescription = document.getElementById("modalDescription");
+        const modalImpact = document.getElementById("modalImpact");
         const modalStack = document.getElementById("modalStack");
         const modalImage = document.getElementById("modalImage");
         const modalImg = document.getElementById("modalImg");
@@ -2045,7 +2285,9 @@
 
                 modalType.textContent = project.type;
                 modalTitle.textContent = project.title;
+                modalArch.textContent = project.architecture;
                 modalDescription.textContent = project.description;
+                modalImpact.textContent = project.impact;
                 modalStack.innerHTML = "";
 
                 modalImage.style.display = "block";
