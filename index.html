@@ -242,11 +242,24 @@
             transition: var(--transition);
         }
 
+        .nav-resume-btn svg {
+            width: 14px;
+            height: 14px;
+            stroke: var(--accent-cyan);
+            stroke-width: 2.2;
+            fill: none;
+            transition: var(--transition);
+        }
+
         .nav-resume-btn:hover {
             border-color: var(--accent-cyan);
             background: rgba(74, 222, 128, 0.16);
             transform: translateY(-1px);
             box-shadow: 0 0 14px rgba(74, 222, 128, 0.2);
+        }
+
+        .nav-resume-btn:hover svg {
+            transform: translateY(1px);
         }
 
         .nav-cta {
@@ -1665,7 +1678,14 @@
                     <a href="#skills">Skills</a>
                     <a href="#projects">Projects</a>
                     <!-- RENAMED TO DOWNLOAD CV WITH LOGO IN NAVBAR -->
-                    <a href="resume.pdf" download="John_Leanard_Guiriba_Resume.pdf" class="nav-resume-btn">📥 Download CV</a>
+                    <a href="resume.pdf" download="John_Leanard_Guiriba_Resume.pdf" class="nav-resume-btn">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        Download CV
+                    </a>
                     <a href="#contact" class="nav-cta">Let's Connect</a>
                 </nav>
 
