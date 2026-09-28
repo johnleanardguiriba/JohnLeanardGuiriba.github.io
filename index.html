@@ -227,24 +227,26 @@
             color: var(--text-main);
         }
 
+        /* DOWNLOAD CV BUTTON IN NAVBAR */
         .nav-resume-btn {
-            padding: 8px 14px;
-            border: 1px solid var(--border);
+            padding: 8px 15px;
+            border: 1px solid var(--border-hover);
             border-radius: var(--radius-sm);
-            background: rgba(255, 255, 255, 0.04);
+            background: rgba(34, 197, 94, 0.08);
             color: var(--text-main) !important;
             font-size: 12px;
             font-weight: 600;
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 7px;
             transition: var(--transition);
         }
 
         .nav-resume-btn:hover {
-            border-color: var(--border-hover);
-            background: rgba(34, 197, 94, 0.1);
+            border-color: var(--accent-cyan);
+            background: rgba(74, 222, 128, 0.16);
             transform: translateY(-1px);
+            box-shadow: 0 0 14px rgba(74, 222, 128, 0.2);
         }
 
         .nav-cta {
@@ -387,7 +389,7 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 13px 22px;
+            padding: 13px 24px;
             border-radius: var(--radius-sm);
             font-size: 13px;
             font-weight: 600;
@@ -1662,8 +1664,8 @@
                     <a href="#about">About</a>
                     <a href="#skills">Skills</a>
                     <a href="#projects">Projects</a>
-                    <!-- DIRECT RESUME DOWNLOAD IN NAVBAR -->
-                    <a href="resume.pdf" download="John_Leanard_Guiriba_Resume.pdf" class="nav-resume-btn">📄 Resume</a>
+                    <!-- RENAMED TO DOWNLOAD CV WITH LOGO IN NAVBAR -->
+                    <a href="resume.pdf" download="John_Leanard_Guiriba_Resume.pdf" class="nav-resume-btn">📥 Download CV</a>
                     <a href="#contact" class="nav-cta">Let's Connect</a>
                 </nav>
 
@@ -1695,9 +1697,9 @@
                         AI Automation Specialist crafting smart, reliable systems that cut repetitive work, connect your tools, and keep your business data organized.
                     </p>
 
+                    <!-- CLEANED HERO BUTTONS (REMOVED DOWNLOAD CV HERE) -->
                     <div class="hero-buttons">
                         <a href="#projects" class="btn btn-primary">View my work ↗</a>
-                        <a href="resume.pdf" download="John_Leanard_Guiriba_Resume.pdf" class="btn btn-secondary">Download CV 📄</a>
                         <a href="#contact" class="btn btn-secondary">Let's Talk</a>
                     </div>
                 </div>
