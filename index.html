@@ -1294,7 +1294,7 @@
         }
 
         /* ===================================================
-           JLG ASSISTANT (CLEAN & MODERN POPUP DESIGN)
+           JLG ASSISTANT (CLEAN, MODERN & INTUITIVE POPUP)
         =================================================== */
         .chat-widget-toggle {
             position: fixed;
@@ -1453,6 +1453,34 @@
             color: #ffffff;
             align-self: flex-end;
             border-bottom-right-radius: 4px;
+        }
+
+        /* Quick Suggestion Prompt Chips */
+        .chat-prompts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 4px;
+        }
+
+        .prompt-chip {
+            background: rgba(34, 197, 94, 0.08);
+            border: 1px solid rgba(34, 197, 94, 0.25);
+            color: var(--text-main);
+            padding: 6px 12px;
+            border-radius: 100px;
+            font-size: 11px;
+            cursor: pointer;
+            transition: var(--transition);
+            white-space: nowrap;
+            font-family: inherit;
+        }
+
+        .prompt-chip:hover {
+            background: linear-gradient(135deg, var(--accent-purple), var(--accent-emerald));
+            color: #ffffff;
+            border-color: transparent;
+            transform: translateY(-1px);
         }
 
         .chat-input-area {
@@ -1699,6 +1727,7 @@
                         </p>
                         <p>
                             I work with n8n, Make.com, Zapier, GoHighLevel, Google Sheets, Google Docs, Notion, (ChatGPT & Gemini), via REST APIs and webhooks to eliminate manual data entry.
+                        </p>
                         <p>
                             Currently pursuing a Bachelor of Science in Information Technology (Major in Web and Game Development), I combine technical skills, problem-solving, and a strong willingness to learn to build useful automation systems.
                         </p>
@@ -1733,7 +1762,7 @@
                         <div class="stat">
                             <div class="stat-number">04</div>
                             <h3>IT Foundation</h3>
-                            <p>BS Information Technology background with strong logic & system design[cite: 1].</p>
+                            <p>BS Information Technology background with strong logic & system design.</p>
                         </div>
                     </div>
                 </div>
@@ -2292,7 +2321,15 @@
         </div>
         <div class="chat-messages" id="chatMessages">
             <div class="chat-bubble bot">
-                Hello! 👋 I am <strong>JLG Assistant</strong>, John Leanard's autonomous AI representative. How can I assist you with business workflow automations or system integrations today?
+                Hi there! 👋 I'm <strong>JLG Assistant</strong>. Looking to automate repetitive tasks, connect your business tools, or build custom AI workflows? Let me know how I can help!
+            </div>
+
+            <!-- Clickable Interactive Quick Prompts -->
+            <div class="chat-prompts" id="chatPrompts">
+                <button type="button" class="prompt-chip" onclick="handleQuickPrompt('What automation services do you offer?')">🛠️ What services do you offer?</button>
+                <button type="button" class="prompt-chip" onclick="handleQuickPrompt('What is your tech stack & tools?')">⚡ Make, Zapier & AI Stack</button>
+                <button type="button" class="prompt-chip" onclick="handleQuickPrompt('How much are your project rates?')">💰 Pricing & Rates</button>
+                <button type="button" class="prompt-chip" onclick="handleQuickPrompt('How can I book a discovery call?')">📅 Book a Discovery Call</button>
             </div>
         </div>
         <form class="chat-input-area" id="chatForm">
@@ -2553,7 +2590,7 @@
         });
 
         // ==========================================
-        // JLG ASSISTANT (24/7 AI BOT LOGIC & FORWARDING)
+        // JLG ASSISTANT (24/7 AI BOT LOGIC & QUICK PROMPTS)
         // ==========================================
         const chatToggle = document.getElementById("chatToggle");
         const chatPopup = document.getElementById("chatPopup");
@@ -2573,14 +2610,21 @@
             chatPopup.classList.remove("active");
         });
 
+        function handleQuickPrompt(promptText) {
+            processUserQuery(promptText);
+        }
+
         chatForm.addEventListener("submit", (e) => {
             e.preventDefault();
             const message = chatInput.value.trim();
             if (!message) return;
+            processUserQuery(message);
+            chatInput.value = "";
+        });
 
+        function processUserQuery(message) {
             // Render User Message
             addChatMessage(message, "user");
-            chatInput.value = "";
 
             // Bot Response Computation
             setTimeout(() => {
@@ -2588,13 +2632,13 @@
                 let reply = "Thank you for reaching out! John specializes in designing custom autonomous workflows using Make.com, Zapier, n8n, and Google Gemini AI. Would you like to schedule a discovery meeting?";
 
                 if (lower.includes("service") || lower.includes("offer") || lower.includes("help") || lower.includes("ano")) {
-                    reply = "John builds end-to-end automated systems: CRM pipelines, lead enrichment, PDF contract generators, customer support bots, and custom API webhooks.";
+                    reply = "John builds practical end-to-end automations: automated client onboarding, AI lead enrichment & outreach, dynamic PDF proposal/contract generators, AI support triage, and custom API webhooks.";
                 } else if (lower.includes("tool") || lower.includes("stack") || lower.includes("make") || lower.includes("zapier") || lower.includes("n8n")) {
                     reply = "His primary toolkit consists of Make.com, Zapier, n8n, GoHighLevel, Google Workspace APIs, webhooks, and generative AI models (OpenAI & Google Gemini).";
-                } else if (lower.includes("price") || lower.includes("rate") || lower.includes("cost") || lower.includes("magkano")) {
-                    reply = "Pricing depends on the scope and complexity of the workflow pipeline. You can send your project details to johnleanardguiriba13@gmail.com for a tailored proposal!";
-                } else if (lower.includes("contact") || lower.includes("email") || lower.includes("hire") || lower.includes("talk") || lower.includes("book")) {
-                    reply = "You can connect with John directly at johnleanardguiriba13@gmail.com or through his LinkedIn profile linked in the contact section below.";
+                } else if (lower.includes("price") || lower.includes("rate") || lower.includes("cost") || lower.includes("magkano") || lower.includes("pricing")) {
+                    reply = "Pricing depends on pipeline complexity (single scenario vs. multi-agent CRM ecosystem). You can send your project details to johnleanardguiriba13@gmail.com for an accurate custom quote!";
+                } else if (lower.includes("contact") || lower.includes("email") || lower.includes("hire") || lower.includes("talk") || lower.includes("book") || lower.includes("call")) {
+                    reply = "You can connect with John directly via email at johnleanardguiriba13@gmail.com or connect through his LinkedIn profile in the contact section below to schedule a call.";
                 }
 
                 addChatMessage(reply, "bot");
@@ -2602,7 +2646,7 @@
                 // Auto Forward to John's Webhook (Zapier Alert Trigger)
                 notifyJohn(message, reply);
             }, 600);
-        });
+        }
 
         function addChatMessage(text, sender) {
             const bubble = document.createElement("div");
